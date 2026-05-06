@@ -1,8 +1,17 @@
 extends CharacterBody2D
 
 @export var move_speed: float = 180.0
+@export var attack_duration: float = 0.15
+
+@onready var attack_collision: CollisionShape2D = $AttackArea/AttackCollision
+
+var is_attacking: bool = false
 
 func _physics_process(delta: float) -> void:
+	handle_movement()
+	handle_attack()
+
+func handle_movement() -> void:
 	var input_direction := Vector2.ZERO
 
 	input_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -13,3 +22,17 @@ func _physics_process(delta: float) -> void:
 
 	velocity = input_direction * move_speed
 	move_and_slide()
+
+func handle_attack() -> void:
+	if Input.is_action_just_pressed("attack") and not is_attacking:
+		attack()
+
+func attack() -> void:
+	is_attacking = true
+	attack_collision.disabled = false
+	print("Player attacked")
+
+	await get_tree().create_timer(attack_duration).timeout
+
+	attack_collision.disabled = true
+	is_attacking = false

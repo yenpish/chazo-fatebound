@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bkhdrwxcisq8y"]
 
 [ext_resource type="PackedScene" uid="uid://dm8vfg8xdixaf" path="res://scenes/player/player.tscn" id="1_yv0av"]
-[ext_resource type="Texture2D" uid="uid://cy007subigwsk" path="res://icon.svg" id="2_x68ck"]
+[ext_resource type="PackedScene" uid="uid://dqrkrjyouy0vl" path="res://scenes/enemies/veilborn_grunt.tscn" id="3_gyqsl"]
 
 [node name="TestRoom" type="Node2D" unique_id=1712736905]
 
@@ -9,7 +9,5 @@
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1592296656]
 
-[node name="MarkerSprite" type="Sprite2D" parent="." unique_id=115033979]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_x68ck")
-offset = Vector2(300, 0)
+[node name="VeilbornGrunt" parent="." unique_id=633401214 instance=ExtResource("3_gyqsl")]
+position = Vector2(120, 0)

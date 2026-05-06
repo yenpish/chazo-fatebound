@@ -7,6 +7,7 @@
 size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
+size = Vector2(32, 24)
 
 [node name="Player" type="CharacterBody2D" unique_id=1997026455]
 script = ExtResource("1_dovo2")
@@ -19,9 +20,8 @@ texture = ExtResource("1_8afob")
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1224834590]
-position = Vector2(55, 0)
+position = Vector2(60, -1)
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea" unique_id=360466446]
-position = Vector2(50, 35)
 shape = SubResource("RectangleShape2D_gmlin")
 disabled = true

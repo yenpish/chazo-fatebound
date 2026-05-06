@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dqrkrjyouy0vl"]
+
+[ext_resource type="Texture2D" uid="uid://cy007subigwsk" path="res://icon.svg" id="1_81eqv"]
+[ext_resource type="Script" uid="uid://b0loigx6elog4" path="res://scripts/enemies/veilborn_grunt.gd" id="1_jym6g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jym6g"]
+size = Vector2(40, 40)
+
+[node name="VeilbornGrunt" type="CharacterBody2D" unique_id=633401214]
+script = ExtResource("1_jym6g")
+
+[node name="PlaceholderSprite" type="Sprite2D" parent="." unique_id=1672744325]
+position = Vector2(0, -0.99999994)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_81eqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971798519]
+shape = SubResource("RectangleShape2D_jym6g")

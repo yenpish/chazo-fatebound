@@ -17,6 +17,8 @@ var is_dead: bool = false
 var last_direction: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
+	
+	add_to_group("player")
 	current_hp = max_hp
 	
 	# Attack hitbox should be fully inactive until player presses attack.

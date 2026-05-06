@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jym6g"]
 size = Vector2(40, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxfu4"]
+size = Vector2(50, 50)
+
 [node name="VeilbornGrunt" type="CharacterBody2D" unique_id=633401214]
 script = ExtResource("1_jym6g")
 
@@ -16,3 +19,9 @@ texture = ExtResource("1_81eqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971798519]
 shape = SubResource("RectangleShape2D_jym6g")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=534820578]
+
+[node name="DamageCollision" type="CollisionShape2D" parent="DamageArea" unique_id=523911126]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gxfu4")

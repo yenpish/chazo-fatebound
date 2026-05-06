@@ -1,15 +1,33 @@
 extends CharacterBody2D
 
+signal hp_changed(current_hp: int, max_hp: int)
+
 @export var move_speed: float = 180.0
+@export var max_hp: int = 5
 @export var attack_duration: float = 0.15
 @export var attack_damage: int = 1
 
 @onready var attack_area: Area2D = $AttackArea
 @onready var attack_collision: CollisionShape2D = $AttackArea/AttackCollision
 
+var current_hp: int
 var is_attacking: bool = false
+var is_dead: bool = false
+
+func _ready() -> void:
+	current_hp = max_hp
+	
+	# Attack hitbox should be fully inactive until player presses attack.
+	attack_collision.disabled = true
+	attack_area.monitoring = false
+	
+	hp_changed.emit(current_hp, max_hp)
+	print("Player ready with HP: ", current_hp)
 
 func _physics_process(delta: float) -> void:
+	if is_dead:
+		return
+
 	handle_movement()
 	handle_attack()
 
@@ -31,10 +49,13 @@ func handle_attack() -> void:
 
 func attack() -> void:
 	is_attacking = true
+	
+	# Activate attack area only during attack.
+	attack_area.monitoring = true
 	attack_collision.disabled = false
+	
 	print("Player attacked")
 
-	# Wait one physics frame so Godot updates overlap detection
 	await get_tree().physics_frame
 
 	var hit_bodies := attack_area.get_overlapping_bodies()
@@ -45,5 +66,26 @@ func attack() -> void:
 
 	await get_tree().create_timer(attack_duration).timeout
 
+	# Turn attack area fully off again.
 	attack_collision.disabled = true
+	attack_area.monitoring = false
+	
 	is_attacking = false
+
+func take_damage(amount: int) -> void:
+	if is_dead:
+		return
+
+	current_hp -= amount
+	current_hp = max(current_hp, 0)
+	
+	hp_changed.emit(current_hp, max_hp)
+	print("Player took ", amount, " damage. HP left: ", current_hp)
+
+	if current_hp <= 0:
+		die()
+
+func die() -> void:
+	is_dead = true
+	velocity = Vector2.ZERO
+	print("Player defeated / Game Over")

@@ -6,6 +6,7 @@ signal hp_changed(current_hp: int, max_hp: int)
 @export var max_hp: int = 5
 @export var attack_duration: float = 0.15
 @export var attack_damage: int = 1
+@export var attack_distance: float = 60.0
 
 @onready var attack_area: Area2D = $AttackArea
 @onready var attack_collision: CollisionShape2D = $AttackArea/AttackCollision
@@ -13,6 +14,7 @@ signal hp_changed(current_hp: int, max_hp: int)
 var current_hp: int
 var is_attacking: bool = false
 var is_dead: bool = false
+var last_direction: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
 	current_hp = max_hp
@@ -21,10 +23,11 @@ func _ready() -> void:
 	attack_collision.disabled = true
 	attack_area.monitoring = false
 	
+	update_attack_area_position()
 	hp_changed.emit(current_hp, max_hp)
 	print("Player ready with HP: ", current_hp)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if is_dead:
 		return
 
@@ -39,9 +42,23 @@ func handle_movement() -> void:
 
 	if input_direction.length() > 0:
 		input_direction = input_direction.normalized()
+		last_direction = input_direction
+		update_attack_area_position()
 
 	velocity = input_direction * move_speed
 	move_and_slide()
+
+func update_attack_area_position() -> void:
+	if abs(last_direction.x) > abs(last_direction.y):
+		if last_direction.x > 0:
+			attack_area.position = Vector2(attack_distance, 0)
+		else:
+			attack_area.position = Vector2(-attack_distance, 0)
+	else:
+		if last_direction.y > 0:
+			attack_area.position = Vector2(0, attack_distance)
+		else:
+			attack_area.position = Vector2(0, -attack_distance)
 
 func handle_attack() -> void:
 	if Input.is_action_just_pressed("attack") and not is_attacking:
@@ -54,7 +71,7 @@ func attack() -> void:
 	attack_area.monitoring = true
 	attack_collision.disabled = false
 	
-	print("Player attacked")
+	print("Player attacked toward: ", last_direction)
 
 	await get_tree().physics_frame
 

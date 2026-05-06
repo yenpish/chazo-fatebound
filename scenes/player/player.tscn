@@ -20,7 +20,7 @@ texture = ExtResource("1_8afob")
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1224834590]
-position = Vector2(60, -1)
+position = Vector2(60, 0)
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea" unique_id=360466446]
 shape = SubResource("RectangleShape2D_gmlin")

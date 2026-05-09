@@ -31,6 +31,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if is_dead:
+		handle_restart()
 		return
 
 	handle_movement()
@@ -65,6 +66,10 @@ func update_attack_area_position() -> void:
 func handle_attack() -> void:
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		attack()
+		
+func handle_restart() -> void:
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 
 func attack() -> void:
 	is_attacking = true
@@ -108,3 +113,4 @@ func die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
 	print("Player defeated / Game Over")
+	print("Press R to restart")

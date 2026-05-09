@@ -11,3 +11,12 @@ offset_top = 20.0
 offset_right = 84.0
 offset_bottom = 43.0
 text = "HP: 5 / 5"
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1694999448]
+visible = false
+offset_left = 300.0
+offset_top = 220.0
+offset_right = 437.0
+offset_bottom = 269.0
+text = "GAME OVER
+Press R to Restart"

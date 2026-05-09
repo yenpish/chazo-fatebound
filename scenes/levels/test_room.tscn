@@ -16,3 +16,4 @@
 position = Vector2(120, 0)
 
 [connection signal="hp_changed" from="Player" to="HUD" method="update_hp"]
+[connection signal="player_died" from="Player" to="HUD" method="show_game_over"]

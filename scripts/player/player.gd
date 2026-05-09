@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal hp_changed(current_hp: int, max_hp: int)
+signal player_died
 
 @export var move_speed: float = 180.0
 @export var max_hp: int = 5
@@ -112,5 +113,8 @@ func take_damage(amount: int) -> void:
 func die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
+	
+	player_died.emit()
+	
 	print("Player defeated / Game Over")
 	print("Press R to restart")

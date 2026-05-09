@@ -4,14 +4,16 @@ extends CharacterBody2D
 @export var move_speed: float = 90.0
 @export var contact_damage: int = 1
 @export var damage_cooldown: float = 1.0
-@export var chase_range: float = 300.0
+@export var chase_range: float = 600.0
 @export var stop_distance: float = 35.0
 
 @onready var damage_area: Area2D = $DamageArea
+@onready var placeholder_sprite: Sprite2D = $PlaceholderSprite
 
 var current_hp: int
 var can_damage_player: bool = true
 var player: Node2D = null
+var is_dead: bool = false
 
 func _ready() -> void:
 	current_hp = max_hp
@@ -19,6 +21,9 @@ func _ready() -> void:
 	print(name, " ready with HP: ", current_hp)
 
 func _physics_process(_delta: float) -> void:
+	if is_dead:
+		return
+
 	chase_player()
 	check_player_contact_damage()
 
@@ -59,12 +64,31 @@ func start_damage_cooldown() -> void:
 	can_damage_player = true
 
 func take_damage(amount: int) -> void:
+	if is_dead:
+		return
+
 	current_hp -= amount
 	print(name, " took ", amount, " damage. HP left: ", current_hp)
+
+	flash_hit()
 
 	if current_hp <= 0:
 		die()
 
+func flash_hit() -> void:
+	if placeholder_sprite == null:
+		return
+
+	placeholder_sprite.modulate = Color(2.0, 2.0, 2.0)
+	await get_tree().create_timer(0.08).timeout
+
+	if is_dead:
+		return
+
+	placeholder_sprite.modulate = Color(1, 1, 1)
+
 func die() -> void:
+	is_dead = true
+	velocity = Vector2.ZERO
 	print(name, " defeated")
 	queue_free()

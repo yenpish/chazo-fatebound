@@ -9,7 +9,7 @@ radius = 20.0
 [node name="PendantOfMalaya" type="Area2D" unique_id=1851028104]
 script = ExtResource("1_e4ljj")
 item_id = "pendant_of_malaya"
-item_name = "Item Name: Pendant of Malaya"
+item_name = "Pendant of Malaya"
 pickup_message = "Pendant of Malaya Found - A blue-gold pendant engraved with a distant scholar’s crest."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1446469644]

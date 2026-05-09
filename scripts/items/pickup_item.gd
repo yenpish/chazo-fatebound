@@ -19,6 +19,9 @@ func _on_body_entered(body: Node2D) -> void:
 	collected = true
 	print(item_name, " collected")
 
+	if item_id != "":
+		DemoState.collect_item(item_id)
+
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud != null and hud.has_method("show_message"):
 		hud.show_message(pickup_message)

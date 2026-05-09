@@ -15,6 +15,10 @@ run/main_scene="uid://bkhdrwxcisq8y"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DemoState="*uid://b38fldierhywy"
+
 [input]
 
 move_up={

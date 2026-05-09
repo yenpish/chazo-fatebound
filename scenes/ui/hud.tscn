@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dn03sukcqi1c2" path="res://scripts/ui/hud.gd" id="1_0mwgc"]
 
-[node name="HUD" type="CanvasLayer" unique_id=6596065]
+[node name="HUD" type="CanvasLayer" unique_id=6596065 groups=["hud"]]
 script = ExtResource("1_0mwgc")
 
 [node name="HPLabel" type="Label" parent="." unique_id=1271924693]
@@ -20,3 +20,11 @@ offset_right = 437.0
 offset_bottom = 269.0
 text = "GAME OVER
 Press R to Restart"
+
+[node name="MessageLabel" type="Label" parent="." unique_id=1785643566]
+visible = false
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 540.0
+offset_bottom = 140.0
+autowrap_mode = 2

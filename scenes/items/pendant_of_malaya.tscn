@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://mfuonb32vn1q"]
+
+[ext_resource type="Script" uid="uid://b74tirrw277nq" path="res://scripts/items/pickup_item.gd" id="1_e4ljj"]
+[ext_resource type="Texture2D" uid="uid://cy007subigwsk" path="res://icon.svg" id="2_e4ppc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wi3vj"]
+radius = 20.0
+
+[node name="PendantOfMalaya" type="Area2D" unique_id=1851028104]
+script = ExtResource("1_e4ljj")
+item_id = "pendant_of_malaya"
+item_name = "Item Name: Pendant of Malaya"
+pickup_message = "Pendant of Malaya Found - A blue-gold pendant engraved with a distant scholar’s crest."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1446469644]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_e4ppc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=926333046]
+shape = SubResource("CircleShape2D_wi3vj")

@@ -11,6 +11,7 @@ signal player_died
 
 @onready var attack_area: Area2D = $AttackArea
 @onready var attack_collision: CollisionShape2D = $AttackArea/AttackCollision
+@onready var placeholder_sprite: Sprite2D = $PlaceholderSprite
 
 var current_hp: int
 var is_attacking: bool = false
@@ -103,12 +104,25 @@ func take_damage(amount: int) -> void:
 
 	current_hp -= amount
 	current_hp = max(current_hp, 0)
-	
+
 	hp_changed.emit(current_hp, max_hp)
 	print("Player took ", amount, " damage. HP left: ", current_hp)
 
+	flash_hurt()
 	if current_hp <= 0:
 		die()
+		
+func flash_hurt() -> void:
+	if placeholder_sprite == null:
+		return
+
+	placeholder_sprite.modulate = Color(2.0, 2.0, 2.0)
+	await get_tree().create_timer(0.08).timeout
+
+	if is_dead:
+		return
+
+	placeholder_sprite.modulate = Color(1, 1, 1)
 
 func die() -> void:
 	is_dead = true

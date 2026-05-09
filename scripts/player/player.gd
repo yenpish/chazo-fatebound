@@ -20,6 +20,7 @@ var last_direction: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
 	
+	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	add_to_group("player")
 	current_hp = max_hp
 	

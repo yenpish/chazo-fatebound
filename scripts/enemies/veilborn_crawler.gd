@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var max_hp: int = 3
-@export var move_speed: float = 90.0
+@export var max_hp: int = 2
+@export var move_speed: float = 130.0
 @export var contact_damage: int = 1
 @export var damage_cooldown: float = 1.0
-@export var chase_range: float = 600.0
-@export var stop_distance: float = 35.0
+@export var chase_range: float = 650.0
+@export var stop_distance: float = 30.0
 
 @onready var damage_area: Area2D = $DamageArea
 @onready var placeholder_sprite: Sprite2D = $PlaceholderSprite

@@ -10,6 +10,7 @@ size = Vector2(42, 42)
 size = Vector2(51, 51)
 
 [node name="VeilbornGrunt" type="CharacterBody2D" unique_id=633401214]
+motion_mode = 1
 script = ExtResource("1_jym6g")
 
 [node name="PlaceholderSprite" type="Sprite2D" parent="." unique_id=1672744325]

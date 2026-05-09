@@ -9,7 +9,8 @@ size = Vector2(64, 64)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
 size = Vector2(32, 24)
 
-[node name="Player" type="CharacterBody2D" unique_id=1997026455]
+[node name="Player" type="CharacterBody2D" unique_id=1997026455 groups=["player"]]
+motion_mode = 1
 script = ExtResource("1_dovo2")
 
 [node name="PlaceholderSprite" type="Sprite2D" parent="." unique_id=1742559865]

@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://c5qns4f0ddf07"]
+
+[ext_resource type="PackedScene" uid="uid://dqrkrjyouy0vl" path="res://scenes/enemies/veilborn_grunt.tscn" id="1_b5s1e"]
+[ext_resource type="PackedScene" uid="uid://dm8vfg8xdixaf" path="res://scenes/player/player.tscn" id="1_ivkax"]
+[ext_resource type="PackedScene" uid="uid://85pfexe2tiic" path="res://scenes/enemies/veilborn_crawler.tscn" id="2_np761"]
+[ext_resource type="PackedScene" uid="uid://sf7100vq7g2c" path="res://scenes/ui/hud.tscn" id="2_ow5mb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivkax"]
+size = Vector2(50, 900)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow5mb"]
+size = Vector2(50, 900)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_np761"]
+size = Vector2(700, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5s1e"]
+size = Vector2(700, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4jx4"]
+size = Vector2(120, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dlh8"]
+size = Vector2(100, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rlci"]
+size = Vector2(150, 60)
+
+[node name="MossgraveOutskirts" type="Node2D" unique_id=1530761973]
+
+[node name="Environment" type="Node2D" parent="." unique_id=1284181877]
+
+[node name="BushWall_Left" type="StaticBody2D" parent="Environment" unique_id=1786121878]
+position = Vector2(-350, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Environment/BushWall_Left" unique_id=1998827895]
+offset_left = -25.0
+offset_top = -450.0
+offset_right = 25.0
+offset_bottom = 450.0
+color = Color(0.25882354, 1, 0.25882354, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BushWall_Left" unique_id=473223692]
+shape = SubResource("RectangleShape2D_ivkax")
+
+[node name="BushWall_Right" type="StaticBody2D" parent="Environment" unique_id=1958325286]
+position = Vector2(350, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Environment/BushWall_Right" unique_id=822858090]
+offset_left = -25.0
+offset_top = -450.0
+offset_right = 25.0
+offset_bottom = 450.0
+color = Color(0.25882354, 1, 0.25882354, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BushWall_Right" unique_id=760185490]
+shape = SubResource("RectangleShape2D_ow5mb")
+
+[node name="BushWall_Top" type="StaticBody2D" parent="Environment" unique_id=2048184788]
+position = Vector2(0, -500)
+
+[node name="ColorRect" type="ColorRect" parent="Environment/BushWall_Top" unique_id=1510125006]
+offset_left = -350.0
+offset_top = -25.0
+offset_right = 350.0
+offset_bottom = 25.0
+color = Color(0.25882354, 1, 0.25882354, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BushWall_Top" unique_id=1593312663]
+shape = SubResource("RectangleShape2D_np761")
+
+[node name="BushWall_Bottom" type="StaticBody2D" parent="Environment" unique_id=1989729147]
+position = Vector2(0, 600)
+
+[node name="ColorRect" type="ColorRect" parent="Environment/BushWall_Bottom" unique_id=481369363]
+offset_left = -350.0
+offset_top = -25.0
+offset_right = 350.0
+offset_bottom = 25.0
+color = Color(0.25882354, 1, 0.25882354, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BushWall_Bottom" unique_id=1511262397]
+shape = SubResource("RectangleShape2D_b5s1e")
+
+[node name="RockCluster_01" type="StaticBody2D" parent="Environment" unique_id=214524464]
+position = Vector2(-160, 220)
+
+[node name="ColorRect" type="ColorRect" parent="Environment/RockCluster_01" unique_id=139970265]
+offset_left = -60.0
+offset_top = -30.0
+offset_right = 60.0
+offset_bottom = 30.0
+color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RockCluster_01" unique_id=1823347062]
+shape = SubResource("RectangleShape2D_b4jx4")
+
+[node name="RockCluster_02" type="StaticBody2D" parent="Environment" unique_id=656167359]
+position = Vector2(160, 80)
+
+[node name="ColorRect" type="ColorRect" parent="Environment/RockCluster_02" unique_id=901419194]
+offset_left = -50.0
+offset_top = -35.0
+offset_right = 50.0
+offset_bottom = 35.0
+color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/RockCluster_02" unique_id=2126833884]
+shape = SubResource("RectangleShape2D_8dlh8")
+
+[node name="BushBlock_01" type="StaticBody2D" parent="Environment" unique_id=247808266]
+position = Vector2(-120, -230)
+
+[node name="ColorRect" type="ColorRect" parent="Environment/BushBlock_01" unique_id=1484902816]
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+color = Color(0.5019608, 0.95686275, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BushBlock_01" unique_id=1088707073]
+shape = SubResource("RectangleShape2D_0rlci")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1265326325]
+
+[node name="VeilbornGrunt_01" parent="Enemies" unique_id=633401214 instance=ExtResource("1_b5s1e")]
+position = Vector2(0, 250)
+
+[node name="VeilbornGrunt_02" parent="Enemies" unique_id=1103673630 instance=ExtResource("1_b5s1e")]
+position = Vector2(-80, -320)
+
+[node name="VeilbornCrawler_01" parent="Enemies" unique_id=976601010 instance=ExtResource("2_np761")]
+position = Vector2(-120, 50)
+
+[node name="VeilbornCrawler_02" parent="Enemies" unique_id=1217474116 instance=ExtResource("2_np761")]
+position = Vector2(130, -150)
+
+[node name="Items" type="Node2D" parent="." unique_id=1851791382]
+
+[node name="Player" parent="." unique_id=1997026455 instance=ExtResource("1_ivkax")]
+position = Vector2(0, 470)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1793241435]
+
+[node name="HUD" parent="." unique_id=6596065 instance=ExtResource("2_ow5mb")]
+
+[connection signal="hp_changed" from="Player" to="HUD" method="update_hp"]
+[connection signal="player_died" from="Player" to="HUD" method="show_game_over"]

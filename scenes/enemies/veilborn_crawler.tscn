@@ -10,6 +10,7 @@ size = Vector2(32, 32)
 size = Vector2(38, 38)
 
 [node name="VeilbornCrawler" type="CharacterBody2D" unique_id=633401214]
+motion_mode = 1
 script = ExtResource("1_gugge")
 
 [node name="PlaceholderSprite" type="Sprite2D" parent="." unique_id=1672744325]

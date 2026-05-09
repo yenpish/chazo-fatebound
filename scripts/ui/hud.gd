@@ -22,3 +22,7 @@ func show_game_over() -> void:
 		return
 	
 	game_over_label.visible = true
+
+
+func _on_player_hp_changed(current_hp: int, max_hp: int) -> void:
+	pass # Replace with function body.

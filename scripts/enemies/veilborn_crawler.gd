@@ -18,25 +18,24 @@ var is_dead: bool = false
 func _ready() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	current_hp = max_hp
-	player = get_tree().get_first_node_in_group("player")
+	find_player()
 	print(name, " ready with HP: ", current_hp)
 
 func _physics_process(_delta: float) -> void:
 	if is_dead:
 		return
 
+	if player == null:
+		find_player()
+
 	chase_player()
 	check_player_contact_damage()
 
+func find_player() -> void:
+	player = get_tree().get_first_node_in_group("player") as Node2D
+
 func chase_player() -> void:
 	if player == null:
-		velocity = Vector2.ZERO
-		move_and_slide()
-		return
-
-	# If the enemy is already touching the player with its damage area,
-	# stop moving so it does not feel like it is being dragged beside the player.
-	if is_touching_player():
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
@@ -50,12 +49,12 @@ func chase_player() -> void:
 		velocity = Vector2.ZERO
 
 	move_and_slide()
-	
+
 func is_touching_player() -> bool:
 	var bodies := damage_area.get_overlapping_bodies()
 
 	for body in bodies:
-		if body.name == "Player":
+		if body.is_in_group("player"):
 			return true
 
 	return false
@@ -70,7 +69,7 @@ func check_player_contact_damage() -> void:
 		if body == self:
 			continue
 
-		if body.name == "Player" and body.has_method("take_damage"):
+		if body.is_in_group("player") and body.has_method("take_damage"):
 			body.take_damage(contact_damage)
 			start_damage_cooldown()
 			break

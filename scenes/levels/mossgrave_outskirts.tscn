@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://85pfexe2tiic" path="res://scenes/enemies/veilborn_crawler.tscn" id="2_np761"]
 [ext_resource type="PackedScene" uid="uid://sf7100vq7g2c" path="res://scenes/ui/hud.tscn" id="2_ow5mb"]
 [ext_resource type="PackedScene" uid="uid://mfuonb32vn1q" path="res://scenes/items/pendant_of_malaya.tscn" id="3_np761"]
+[ext_resource type="PackedScene" uid="uid://clxgx6wkdbixs" path="res://scenes/items/eclipse_shard_of_hunger.tscn" id="4_b4jx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivkax"]
 size = Vector2(50, 900)
@@ -140,6 +141,9 @@ position = Vector2(130, -150)
 
 [node name="PendantOfMalaya" parent="Items" unique_id=1851028104 instance=ExtResource("3_np761")]
 position = Vector2(-230, -250)
+
+[node name="EclipseShardOfHunger_TEMP" parent="Items" unique_id=2045639108 instance=ExtResource("4_b4jx4")]
+position = Vector2(0, -380)
 
 [node name="Player" parent="." unique_id=1997026455 instance=ExtResource("1_ivkax")]
 position = Vector2(0, 470)

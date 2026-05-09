@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://clxgx6wkdbixs"]
+
+[ext_resource type="Script" uid="uid://b74tirrw277nq" path="res://scripts/items/pickup_item.gd" id="1_fuap3"]
+[ext_resource type="Texture2D" uid="uid://cy007subigwsk" path="res://icon.svg" id="2_0mi2e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0oe0y"]
+radius = 22.0
+
+[node name="EclipseShardOfHunger" type="Area2D" unique_id=2045639108]
+script = ExtResource("1_fuap3")
+item_id = "eclipse_shard_hunger"
+item_name = "EclipseShard of Hunger"
+pickup_message = "Eclipse Shard of Hunger obtained - The first fragment of the Eclipse Gate awakens."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1122150693]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0mi2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=950654494]
+shape = SubResource("CircleShape2D_0oe0y")

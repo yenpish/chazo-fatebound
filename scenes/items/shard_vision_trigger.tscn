@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://5si1mv5g3aug"]
+
+[ext_resource type="Script" uid="uid://06gwuksd3icc" path="res://scripts/items/shard_vision_trigger.gd" id="1_7mjlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw3lk"]
+size = Vector2(120, 40)
+
+[node name="ShardVisionTrigger" type="Area2D" unique_id=161159187]
+script = ExtResource("1_7mjlv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1692553350]
+offset_left = -60.0
+offset_top = -20.0
+offset_right = 60.0
+offset_bottom = 20.0
+color = Color(0.5879269, 0.18861401, 0.6602341, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983673265]
+shape = SubResource("RectangleShape2D_aw3lk")

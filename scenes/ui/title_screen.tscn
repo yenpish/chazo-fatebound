@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://be8olkdsyrlv7"]
+
+[ext_resource type="Script" uid="uid://duguum2f6pg1w" path="res://scripts/ui/title_screen.gd" id="1_eb34j"]
+
+[node name="TitleScreen" type="Control" unique_id=515433026]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eb34j")
+
+[node name="Background" type="ColorRect" parent="." unique_id=775190534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8979859, 0.5332434, 0.13619801, 1)
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=875031265]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 150.0
+offset_right = 850.0
+offset_bottom = 570.0
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Content" unique_id=1936619829]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Chazo: Fatebound"
+
+[node name="SubtitleLabel" type="Label" parent="Content" unique_id=1225532770]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "A dark fantasy prototype demo"
+
+[node name="StartButton" type="Button" parent="Content" unique_id=562035713]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Start Demo"
+
+[node name="ControlsLabel" type="Label" parent="Content" unique_id=1566189292]
+layout_mode = 2
+autowrap_mode = 3

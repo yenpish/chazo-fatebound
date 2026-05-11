@@ -10,7 +10,7 @@ radius = 22.0
 script = ExtResource("1_fuap3")
 item_id = "eclipse_shard_hunger"
 item_name = "EclipseShard of Hunger"
-pickup_message = "Eclipse Shard of Hunger obtained - The first fragment of the Eclipse Gate awakens."
+pickup_message = "Eclipse Shard of Hunger obtained - Brakkor's corruption breaks, releasing the first fragment."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1122150693]
 scale = Vector2(0.25, 0.25)

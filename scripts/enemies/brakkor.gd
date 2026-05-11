@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var damage_cooldown: float = 1.2
 @export var chase_range: float = 700.0
 @export var stop_distance: float = 55.0
+@export var shard_scene: PackedScene
+@export var shard_spawn_offset: Vector2 = Vector2(0, 40)
 
 @onready var damage_area: Area2D = $DamageArea
 @onready var placeholder_sprite: Sprite2D = $PlaceholderSprite
@@ -110,4 +112,23 @@ func die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
 	print(name, " defeated")
+
+	spawn_eclipse_shard()
+
 	queue_free()
+
+func spawn_eclipse_shard() -> void:
+	if shard_scene == null:
+		print("Brakkor has no shard_scene assigned.")
+		return
+
+	var shard_instance := shard_scene.instantiate() as Node2D
+
+	if shard_instance == null:
+		print("Failed to spawn Eclipse Shard.")
+		return
+
+	get_parent().add_child(shard_instance)
+	shard_instance.global_position = global_position + shard_spawn_offset
+
+	print("Brakkor released Eclipse Shard of Hunger")

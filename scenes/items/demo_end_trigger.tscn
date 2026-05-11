@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cxm0syi8213s5"]
+
+[ext_resource type="Script" uid="uid://7f4uu7dlpt58" path="res://scripts/items/demo_end_trigger.gd" id="1_0si0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0si0a"]
+size = Vector2(140, 40)
+
+[node name="DemoEndTrigger" type="Area2D" unique_id=1590648381]
+script = ExtResource("1_0si0a")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1529327908]
+offset_left = -70.0
+offset_top = -20.0
+offset_right = 70.0
+offset_bottom = 20.0
+color = Color(0.10334448, 1.2032688e-06, 0.5272414, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607289169]
+shape = SubResource("RectangleShape2D_0si0a")

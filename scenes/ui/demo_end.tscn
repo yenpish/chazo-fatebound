@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b3pu7o2eece2k"]
+
+[ext_resource type="Script" uid="uid://dy6xymxfpr8gs" path="res://scripts/ui/demo_end.gd" id="1_vw6s1"]
+
+[node name="DemoEnd" type="Control" unique_id=896297213]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vw6s1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=23338050]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34426335, 0.00038468503, 0.38628083, 1)
+
+[node name="Content" type="VBoxContainer" parent="." unique_id=1272724649]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 120.0
+offset_right = 850.0
+offset_bottom = 520.0
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="Content" unique_id=2004968621]
+layout_mode = 2
+text = "Demo End"
+autowrap_mode = 3
+
+[node name="BodyLabel" type="Label" parent="Content" unique_id=622957715]
+custom_minimum_size = Vector2(700, 120)
+layout_mode = 2
+text = "The Eclipse Shard of Hunger has been released.
+
+Somewhere beyond Mossgrave, the Eclipse Gate stirs...
+but Chazo's journey is not yet complete."
+autowrap_mode = 3
+
+[node name="SecretLabel" type="Label" parent="Content" unique_id=2107874495]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="RestartLabel" type="Label" parent="Content" unique_id=1426022477]
+layout_mode = 2
+text = "Press R to replay the demo."
+autowrap_mode = 3

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dt3x5p8ysnmf7" path="res://scenes/enemies/brakkor.tscn" id="3_0rlci"]
 [ext_resource type="PackedScene" uid="uid://mfuonb32vn1q" path="res://scenes/items/pendant_of_malaya.tscn" id="3_np761"]
 [ext_resource type="PackedScene" uid="uid://5si1mv5g3aug" path="res://scenes/items/shard_vision_trigger.tscn" id="5_8dlh8"]
+[ext_resource type="PackedScene" uid="uid://cxm0syi8213s5" path="res://scenes/items/demo_end_trigger.tscn" id="6_0rlci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivkax"]
 size = Vector2(50, 900)
@@ -130,16 +131,16 @@ shape = SubResource("RectangleShape2D_0rlci")
 position = Vector2(0, 250)
 
 [node name="VeilbornGrunt_02" parent="Enemies" unique_id=1103673630 instance=ExtResource("1_b5s1e")]
-position = Vector2(-80, -320)
+position = Vector2(194, 194)
 
 [node name="VeilbornCrawler_01" parent="Enemies" unique_id=976601010 instance=ExtResource("2_np761")]
-position = Vector2(-120, 50)
+position = Vector2(-174, -23)
 
 [node name="VeilbornCrawler_02" parent="Enemies" unique_id=1217474116 instance=ExtResource("2_np761")]
-position = Vector2(130, -150)
+position = Vector2(-75, 68)
 
 [node name="Brakkor" parent="Enemies" unique_id=353927916 instance=ExtResource("3_0rlci")]
-position = Vector2(185, -312)
+position = Vector2(5, -105)
 
 [node name="Items" type="Node2D" parent="." unique_id=1851791382]
 
@@ -147,7 +148,10 @@ position = Vector2(185, -312)
 position = Vector2(-230, -250)
 
 [node name="ShardVisionTrigger" parent="Items" unique_id=161159187 instance=ExtResource("5_8dlh8")]
-position = Vector2(0, -440)
+position = Vector2(133, -252)
+
+[node name="DemoEndTrigger" parent="Items" unique_id=1590648381 instance=ExtResource("6_0rlci")]
+position = Vector2(0, -407)
 
 [node name="Player" parent="." unique_id=1997026455 instance=ExtResource("1_ivkax")]
 position = Vector2(0, 470)

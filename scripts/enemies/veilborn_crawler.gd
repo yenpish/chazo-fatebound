@@ -14,10 +14,12 @@ var current_hp: int
 var can_damage_player: bool = true
 var player: Node2D = null
 var is_dead: bool = false
+var original_sprite_modulate: Color
 
 func _ready() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	current_hp = max_hp
+	original_sprite_modulate = placeholder_sprite.modulate
 	find_player()
 	print(name, " ready with HP: ", current_hp)
 
@@ -95,13 +97,14 @@ func flash_hit() -> void:
 	if placeholder_sprite == null:
 		return
 
-	placeholder_sprite.modulate = Color(2.0, 2.0, 2.0)
+	placeholder_sprite.modulate = Color(2.0, 2.0, 2.0, 1.0)
 	await get_tree().create_timer(0.08).timeout
 
 	if is_dead:
 		return
 
-	placeholder_sprite.modulate = Color(1, 1, 1)
+	if is_instance_valid(placeholder_sprite):
+		placeholder_sprite.modulate = original_sprite_modulate
 
 func die() -> void:
 	is_dead = true

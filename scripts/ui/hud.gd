@@ -8,7 +8,8 @@ extends CanvasLayer
 const HEART_FULL_TEXTURE: Texture2D = preload("res://assets/sprites/hp-bar-full-chazo.png")
 const HEART_EMPTY_TEXTURE: Texture2D = preload("res://assets/sprites/hp-bar-empty-chazo.png")
 
-var message_timer_id: int = 0
+var message_queue: Array[String] = []
+var is_showing_message: bool = false
 
 func _ready() -> void:
 	setup_message_label()
@@ -21,7 +22,6 @@ func setup_message_label() -> void:
 	message_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	message_label.clip_text = true
 	message_label.visible = false
-
 
 func update_hp(current_hp: int, max_hp: int) -> void:
 	# Backup text version, hidden for now.
@@ -57,13 +57,22 @@ func show_game_over() -> void:
 func show_message(message: String) -> void:
 	print(message)
 
-	message_timer_id += 1
-	var current_timer_id := message_timer_id
+	message_queue.append(message)
 
-	message_label.text = message
-	message_label.visible = true
+	if not is_showing_message:
+		process_message_queue()
 
-	await get_tree().create_timer(3.0).timeout
 
-	if current_timer_id == message_timer_id:
-		message_label.visible = false
+func process_message_queue() -> void:
+	is_showing_message = true
+
+	while message_queue.size() > 0:
+		var next_message: String = message_queue.pop_front() as String
+
+		message_label.text = next_message
+		message_label.visible = true
+
+		await get_tree().create_timer(3.0).timeout
+
+	message_label.visible = false
+	is_showing_message = false

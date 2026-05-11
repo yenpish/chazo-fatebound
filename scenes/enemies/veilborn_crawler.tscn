@@ -1,26 +1,28 @@
 [gd_scene format=3 uid="uid://85pfexe2tiic"]
 
 [ext_resource type="Script" uid="uid://ctmksvt6ye0bh" path="res://scripts/enemies/veilborn_crawler.gd" id="1_gugge"]
-[ext_resource type="Texture2D" uid="uid://cy007subigwsk" path="res://icon.svg" id="2_lpc8a"]
+[ext_resource type="Texture2D" uid="uid://d2jrrcv74nlct" path="res://assets/sprites/veilborn_1.png" id="2_gugge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jym6g"]
-size = Vector2(32, 32)
+size = Vector2(29, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxfu4"]
-size = Vector2(38, 38)
+size = Vector2(30, 41)
 
 [node name="VeilbornCrawler" type="CharacterBody2D" unique_id=633401214]
 motion_mode = 1
 script = ExtResource("1_gugge")
 
 [node name="PlaceholderSprite" type="Sprite2D" parent="." unique_id=1672744325]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_lpc8a")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_gugge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971798519]
+position = Vector2(2.5000007, -1.0000007)
 shape = SubResource("RectangleShape2D_jym6g")
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=534820578]
 
 [node name="DamageCollision" type="CollisionShape2D" parent="DamageArea" unique_id=523911126]
+position = Vector2(2.4999998, -0.99999964)
 shape = SubResource("RectangleShape2D_gxfu4")

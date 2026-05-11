@@ -17,6 +17,7 @@ var can_damage_player: bool = true
 var player: Node2D = null
 var is_dead: bool = false
 var original_sprite_modulate: Color
+var boss_hp_bar: Node = null
 
 
 func _ready() -> void:
@@ -24,6 +25,14 @@ func _ready() -> void:
 	current_hp = max_hp
 	original_sprite_modulate = placeholder_sprite.modulate
 	find_player()
+	
+	await get_tree().process_frame
+
+	boss_hp_bar = get_tree().get_first_node_in_group("boss_hp_bar")
+
+	if boss_hp_bar != null and boss_hp_bar.has_method("show_boss_bar"):
+		boss_hp_bar.show_boss_bar("Brakkor, the Rootbound Maw", current_hp, max_hp)
+	
 	print(name, " ready with HP: ", current_hp)
 
 
@@ -86,7 +95,12 @@ func take_damage(amount: int) -> void:
 		return
 
 	current_hp -= amount
+	current_hp = max(current_hp, 0)
+
 	print(name, " took ", amount, " damage. HP left: ", current_hp)
+
+	if boss_hp_bar != null and boss_hp_bar.has_method("update_boss_hp"):
+		boss_hp_bar.update_boss_hp(current_hp, max_hp)
 
 	flash_hit()
 
@@ -112,6 +126,14 @@ func die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
 	print(name, " defeated")
+
+	if boss_hp_bar != null and boss_hp_bar.has_method("update_boss_hp"):
+		boss_hp_bar.update_boss_hp(0, max_hp)
+
+	await get_tree().create_timer(0.5).timeout
+
+	if boss_hp_bar != null and boss_hp_bar.has_method("hide_boss_bar"):
+		boss_hp_bar.hide_boss_bar()
 
 	spawn_eclipse_shard()
 

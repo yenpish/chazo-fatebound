@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b3fp8jn237357"]
+
+[ext_resource type="Script" uid="uid://bmqo31aovclrj" path="res://scripts/ui/boss_hp_bar.gd" id="1_r8xh3"]
+[ext_resource type="Texture2D" uid="uid://bu42n38entkhv" path="res://assets/sprites/hp-bar-full-boss.png" id="2_q673x"]
+
+[node name="BossHpBar" type="CanvasLayer" unique_id=1335113807 groups=["boss_hp_bar"]]
+script = ExtResource("1_r8xh3")
+
+[node name="BossBarTexture" type="TextureRect" parent="." unique_id=381299245]
+offset_left = 326.0
+offset_top = 48.0
+offset_right = 826.0
+offset_bottom = 93.0
+texture = ExtResource("2_q673x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BossNameLabel" type="Label" parent="." unique_id=1409574750]
+offset_left = 337.0
+offset_top = 33.0
+offset_right = 837.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 20
+text = "Brakkor, the Rootbound Maw"
+horizontal_alignment = 1
+vertical_alignment = 1

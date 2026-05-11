@@ -6,6 +6,7 @@
 script = ExtResource("1_0mwgc")
 
 [node name="HPLabel" type="Label" parent="." unique_id=1271924693]
+visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 84.0
@@ -28,3 +29,9 @@ offset_top = 60.0
 offset_right = 540.0
 offset_bottom = 140.0
 autowrap_mode = 2
+
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=527400942]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 266.0
+offset_bottom = 56.0

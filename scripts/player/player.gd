@@ -19,7 +19,6 @@ var is_dead: bool = false
 var last_direction: Vector2 = Vector2.RIGHT
 
 func _ready() -> void:
-	
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	add_to_group("player")
 	current_hp = max_hp
@@ -29,6 +28,10 @@ func _ready() -> void:
 	attack_area.monitoring = false
 	
 	update_attack_area_position()
+
+	# Wait one frame so HUD and its child nodes are fully ready.
+	await get_tree().process_frame
+	
 	hp_changed.emit(current_hp, max_hp)
 	print("Player ready with HP: ", current_hp)
 

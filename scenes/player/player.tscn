@@ -1,27 +1,28 @@
 [gd_scene format=3 uid="uid://dm8vfg8xdixaf"]
 
-[ext_resource type="Texture2D" uid="uid://cy007subigwsk" path="res://icon.svg" id="1_8afob"]
 [ext_resource type="Script" uid="uid://3hsswptaqrul" path="res://scripts/player/player.gd" id="1_dovo2"]
+[ext_resource type="Texture2D" uid="uid://ckenmmrwr47yq" path="res://assets/sprites/chazo-front-profile.png" id="2_dovo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(64, 64)
+size = Vector2(33, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
-size = Vector2(32, 24)
+size = Vector2(55, 34)
 
 [node name="Player" type="CharacterBody2D" unique_id=1997026455 groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_dovo2")
 
 [node name="PlaceholderSprite" type="Sprite2D" parent="." unique_id=1742559865]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_8afob")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_dovo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491462385]
+position = Vector2(-1, 2.5)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1224834590]
-position = Vector2(60, 0)
+position = Vector2(45, 0)
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea" unique_id=360466446]
 shape = SubResource("RectangleShape2D_gmlin")

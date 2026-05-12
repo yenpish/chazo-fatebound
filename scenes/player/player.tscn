@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dm8vfg8xdixaf"]
 
 [ext_resource type="Script" uid="uid://3hsswptaqrul" path="res://scripts/player/player.gd" id="1_dovo2"]
-[ext_resource type="Texture2D" uid="uid://ckenmmrwr47yq" path="res://assets/sprites/chazo-front-profile.png" id="2_dovo2"]
+[ext_resource type="Texture2D" uid="uid://4v557kleoyob" path="res://assets/sprites/chazo-down.png" id="2_dovo2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(33, 55)
@@ -14,7 +14,6 @@ motion_mode = 1
 script = ExtResource("1_dovo2")
 
 [node name="PlaceholderSprite" type="Sprite2D" parent="." unique_id=1742559865]
-scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_dovo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491462385]

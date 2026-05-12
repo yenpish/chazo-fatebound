@@ -17,10 +17,15 @@ signal player_died
 @onready var placeholder_sprite: Sprite2D = $PlaceholderSprite
 @onready var body_collision: CollisionShape2D = $CollisionShape2D
 
+const CHAZO_DOWN_TEXTURE: Texture2D = preload("res://assets/sprites/chazo-down.png")
+const CHAZO_RIGHT_TEXTURE: Texture2D = preload("res://assets/sprites/chazo-right.png")
+const CHAZO_LEFT_TEXTURE: Texture2D = preload("res://assets/sprites/chazo-left.png")
+const CHAZO_UP_TEXTURE: Texture2D = preload("res://assets/sprites/chazo-up.png")
+
 var current_hp: int
 var is_attacking: bool = false
 var is_dead: bool = false
-var last_direction: Vector2 = Vector2.RIGHT
+var last_direction: Vector2 = Vector2.DOWN
 
 
 func _ready() -> void:
@@ -36,6 +41,7 @@ func _ready() -> void:
 	# AttackCollision should stay centered inside AttackArea.
 	attack_collision.position = Vector2.ZERO
 	
+	update_player_sprite_direction()
 	update_attack_area_position()
 
 	# Wait one frame so HUD and its child nodes are fully ready.
@@ -63,6 +69,7 @@ func handle_movement() -> void:
 	if input_direction.length() > 0:
 		input_direction = input_direction.normalized()
 		last_direction = get_cardinal_direction(input_direction)
+		update_player_sprite_direction()
 		update_attack_area_position()
 
 	velocity = input_direction * move_speed
@@ -81,6 +88,21 @@ func get_cardinal_direction(direction: Vector2) -> Vector2:
 		else:
 			return Vector2.UP
 
+func update_player_sprite_direction() -> void:
+	if placeholder_sprite == null:
+		return
+
+	if last_direction == Vector2.RIGHT:
+		placeholder_sprite.texture = CHAZO_RIGHT_TEXTURE
+
+	elif last_direction == Vector2.LEFT:
+		placeholder_sprite.texture = CHAZO_LEFT_TEXTURE
+
+	elif last_direction == Vector2.UP:
+		placeholder_sprite.texture = CHAZO_UP_TEXTURE
+
+	elif last_direction == Vector2.DOWN:
+		placeholder_sprite.texture = CHAZO_DOWN_TEXTURE
 
 func update_attack_area_position() -> void:
 	var attack_shape := attack_collision.shape as RectangleShape2D

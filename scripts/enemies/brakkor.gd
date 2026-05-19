@@ -1,26 +1,19 @@
-extends CharacterBody2D
+extends "res://scripts/enemies/enemy_base.gd"
 
-@export var max_hp: int = 12
-@export var move_speed: float = 55.0
-@export var contact_damage: int = 1
-@export var damage_cooldown: float = 1.2
-@export var chase_range: float = 700.0
-@export var stop_distance: float = 55.0
 @export var shard_scene: PackedScene
 @export var shard_spawn_offset: Vector2 = Vector2(0, 40)
 
-@onready var damage_area: Area2D = $DamageArea
-@onready var placeholder_sprite: Sprite2D = $PlaceholderSprite
-
-var current_hp: int
-var can_damage_player: bool = true
-var player: Node2D = null
-var is_dead: bool = false
-var original_sprite_modulate: Color
 var boss_hp_bar: Node = null
 
 
 func _ready() -> void:
+	max_hp = 12
+	move_speed = 55.0
+	contact_damage = 1
+	damage_cooldown = 1.2
+	chase_range = 700.0
+	stop_distance = 55.0
+	
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	current_hp = max_hp
 	original_sprite_modulate = placeholder_sprite.modulate

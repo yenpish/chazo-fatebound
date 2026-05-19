@@ -105,10 +105,10 @@ func take_damage(amount: int) -> void:
 	# Only apply hitstop and knockback for non-boss enemies
 	if not is_in_group("boss"):
 		is_hitstopped = true
-		hitstop_timer = 0.12
+		hitstop_timer = 0.08
 		if player != null:
 			var dir = (global_position - player.global_position).normalized()
-			velocity = dir * 200  # visible knockback
+			velocity = dir * 125  # visible knockback
 
 	if current_hp <= 0:
 		die()

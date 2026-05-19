@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://5si1mv5g3aug" path="res://scenes/items/shard_vision_trigger.tscn" id="5_8dlh8"]
 [ext_resource type="PackedScene" uid="uid://cxm0syi8213s5" path="res://scenes/items/demo_end_trigger.tscn" id="6_0rlci"]
 [ext_resource type="PackedScene" uid="uid://b3fp8jn237357" path="res://scenes/ui/boss_hp_bar.tscn" id="9_ltq4k"]
+[ext_resource type="Script" uid="uid://bcegx0ticd8jx" path="res://scripts/debug/debug_manager.gd" id="11_7asg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivkax"]
 size = Vector2(50, 900)
@@ -164,6 +165,9 @@ position = Vector2(0, 470)
 [node name="HUD" parent="." unique_id=6596065 instance=ExtResource("2_ow5mb")]
 
 [node name="BossHpBar" parent="." unique_id=1335113807 instance=ExtResource("9_ltq4k")]
+
+[node name="DebugManager" type="Node" parent="." unique_id=1594459143 groups=["debug_manager"]]
+script = ExtResource("11_7asg6")
 
 [connection signal="hp_changed" from="Player" to="HUD" method="update_hp"]
 [connection signal="player_died" from="Player" to="HUD" method="show_game_over"]

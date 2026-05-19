@@ -7,8 +7,8 @@ extends CharacterBody2D
 @export var chase_range: float = 600.0
 @export var stop_distance: float = 35.0
 
-@onready var damage_area: Area2D = $DamageArea
-@onready var placeholder_sprite: Sprite2D = $PlaceholderSprite
+@onready var damage_area: Area2D = get_node_or_null("DamageArea")
+@onready var placeholder_sprite: Sprite2D = get_node_or_null("PlaceholderSprite")
 
 var current_hp: int
 var can_damage_player: bool = true
@@ -62,6 +62,10 @@ func chase_player() -> void:
 
 
 func check_player_contact_damage() -> void:
+	
+	if damage_area == null:
+		return
+	
 	if not can_damage_player:
 		return
 

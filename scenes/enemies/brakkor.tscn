@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://d2jrrcv74nlct" path="res://assets/sprites/veilborn_1.png" id="1_n5tgf"]
 [ext_resource type="Script" uid="uid://b5xqmkr3vtg7x" path="res://scripts/enemies/brakkor.gd" id="1_t8u83"]
-[ext_resource type="PackedScene" uid="uid://clxgx6wkdbixs" path="res://scenes/items/eclipse_shard_of_hunger.tscn" id="2_tyrmv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyrmv"]
 size = Vector2(80, 95)
@@ -13,7 +12,6 @@ size = Vector2(86, 101)
 [node name="Brakkor" type="CharacterBody2D" unique_id=353927916]
 motion_mode = 1
 script = ExtResource("1_t8u83")
-shard_scene = ExtResource("2_tyrmv")
 
 [node name="PlaceholderSprite" type="Sprite2D" parent="." unique_id=275215516]
 modulate = Color(0.757035, 0.48384285, 0.20329967, 1)

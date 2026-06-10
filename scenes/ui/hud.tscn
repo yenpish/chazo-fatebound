@@ -6,7 +6,6 @@
 script = ExtResource("1_0mwgc")
 
 [node name="HPLabel" type="Label" parent="." unique_id=1271924693]
-visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 84.0
@@ -14,7 +13,6 @@ offset_bottom = 43.0
 text = "HP: 5 / 5"
 
 [node name="GameOverLabel" type="Label" parent="." unique_id=1694999448]
-visible = false
 offset_left = 300.0
 offset_top = 220.0
 offset_right = 437.0
@@ -23,12 +21,16 @@ text = "GAME OVER
 Press R to Restart"
 
 [node name="MessageLabel" type="Label" parent="." unique_id=1785643566]
-visible = false
-offset_left = 20.0
-offset_top = 60.0
-offset_right = 540.0
-offset_bottom = 140.0
-autowrap_mode = 2
+offset_left = 22.0
+offset_top = 58.0
+offset_right = 542.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="HeartContainer" type="HBoxContainer" parent="." unique_id=527400942]
 offset_left = 16.0

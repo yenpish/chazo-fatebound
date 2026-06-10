@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var boss_bar_texture: TextureRect = $BossBarTexture
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 const BOSS_BAR_FULL: Texture2D = preload("res://assets/sprites/hp-bar-full-boss.png")
 const BOSS_BAR_HALF: Texture2D = preload("res://assets/sprites/hp-bar-half-boss.png")
@@ -13,12 +14,16 @@ func _ready() -> void:
 
 func show_boss_bar(_boss_name: String, current_hp: int, max_hp: int) -> void:
 	visible = true
+
+	progress_bar.max_value = max_hp
+	progress_bar.value = current_hp
+
 	update_boss_hp(current_hp, max_hp)
 
 
 func update_boss_hp(current_hp: int, max_hp: int) -> void:
-	if max_hp <= 0:
-		return
+	progress_bar.max_value = max_hp
+	progress_bar.value = current_hp
 
 	var hp_ratio: float = float(current_hp) / float(max_hp)
 

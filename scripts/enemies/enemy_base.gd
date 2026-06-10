@@ -6,17 +6,22 @@ extends CharacterBody2D
 @export var contact_damage: int = 1
 @export var damage_cooldown: float = 1.0
 @export var chase_range: float = 600.0
-@export var stop_distance: float = 35.0
+@export var stop_distance: float = 65.0
 
 # === Node References ===
 @onready var damage_area: Area2D = $DamageArea
-@onready var placeholder_sprite: Sprite2D = $PlaceholderSprite
+@onready var placeholder_sprite = $PlaceholderSprite
 
 # === State Variables ===
 var current_hp: int
 var can_damage_player: bool = true
+
 var is_dead: bool = false
+@export var attack_cooldown: float = 1.0
+
 var player: Node2D = null
+var is_attacking: bool = false
+var facing_direction: String = "south"
 var original_sprite_modulate: Color
 
 # === Hitstop / knockback ===
@@ -53,7 +58,29 @@ func _physics_process(delta: float) -> void:
 		find_player()
 
 	chase_player()
-	check_player_contact_damage()
+	
+	if placeholder_sprite is AnimatedSprite2D:
+
+		if velocity.length() > 0:
+
+			if abs(velocity.x) > abs(velocity.y):
+				if velocity.x > 0:
+					facing_direction = "east"
+				else:
+					facing_direction = "west"
+			else:
+				if velocity.y > 0:
+					facing_direction = "south"
+				else:
+					facing_direction = "north"
+
+			if not is_attacking:
+				placeholder_sprite.play("walk_" + facing_direction)
+
+		elif not is_attacking:
+			placeholder_sprite.stop()
+	
+	#check_player_contact_damage()
 	update_debug_label()
 	move_and_slide()
 
@@ -65,13 +92,60 @@ func chase_player() -> void:
 		velocity = Vector2.ZERO
 		return
 
+	if is_attacking:
+		velocity = Vector2.ZERO
+		return
+
 	var direction_to_player := player.global_position - global_position
 	var distance_to_player := direction_to_player.length()
 
-	if distance_to_player <= chase_range and distance_to_player > stop_distance:
+	if distance_to_player <= stop_distance:
+		start_attack()
+		velocity = Vector2.ZERO
+		return
+
+	if distance_to_player <= chase_range:
 		velocity = direction_to_player.normalized() * move_speed
 	else:
 		velocity = Vector2.ZERO
+
+func start_attack() -> void:
+	
+	if is_attacking:
+		return
+
+	is_attacking = true
+
+	print(name, " attacking")
+	
+	if placeholder_sprite is AnimatedSprite2D:
+
+		var attack_dir = player.global_position - global_position
+
+		if abs(attack_dir.x) > abs(attack_dir.y):
+			if attack_dir.x > 0:
+				facing_direction = "east"
+			else:
+				facing_direction = "west"
+		else:
+			if attack_dir.y > 0:
+				facing_direction = "south"
+			else:
+				facing_direction = "north"
+
+		placeholder_sprite.stop()
+		placeholder_sprite.frame = 0
+
+		placeholder_sprite.play("attack_" + facing_direction)
+
+		await get_tree().create_timer(0.3).timeout
+
+	if player != null and player.has_method("take_damage"):
+		player.take_damage(contact_damage)
+
+	await get_tree().create_timer(attack_cooldown).timeout
+
+	is_attacking = false
 
 func check_player_contact_damage() -> void:
 	if not can_damage_player or damage_area == null:

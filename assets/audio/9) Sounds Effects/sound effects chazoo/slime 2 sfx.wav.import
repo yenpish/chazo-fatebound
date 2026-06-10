@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b7hr1c32dku54"
+path="res://.godot/imported/slime 2 sfx.wav-95a12073b7298ca85a240b1c32b3329a.sample"
+
+[deps]
+
+source_file="res://assets/audio/9) Sounds Effects/sound effects chazoo/slime 2 sfx.wav"
+dest_files=["res://.godot/imported/slime 2 sfx.wav-95a12073b7298ca85a240b1c32b3329a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

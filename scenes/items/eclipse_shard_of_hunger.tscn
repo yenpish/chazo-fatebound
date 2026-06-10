@@ -1,20 +1,28 @@
 [gd_scene format=3 uid="uid://clxgx6wkdbixs"]
 
 [ext_resource type="Script" uid="uid://b74tirrw277nq" path="res://scripts/items/pickup_item.gd" id="1_fuap3"]
-[ext_resource type="Texture2D" uid="uid://cy007subigwsk" path="res://icon.svg" id="2_0mi2e"]
+[ext_resource type="Texture2D" uid="uid://dvn8hoban5kth" path="res://assets/sprites/14) Ancient Eclipse Shard fragment/unknown.png" id="2_0mi2e"]
+[ext_resource type="AudioStream" uid="uid://bm5iio2q63x8k" path="res://assets/audio/9) Sounds Effects/sound effects chazoo/collecting.wav" id="3_0oe0y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0oe0y"]
-radius = 22.0
+radius = 4.0
 
 [node name="EclipseShardOfHunger" type="Area2D" unique_id=2045639108]
+scale = Vector2(4.5, 4.5)
 script = ExtResource("1_fuap3")
 item_id = "eclipse_shard_hunger"
 item_name = "EclipseShard of Hunger"
-pickup_message = "Eclipse Shard of Hunger obtained - Brakkor's corruption breaks, releasing the first fragment."
+pickup_message = "ECLIPSE SHARD OF HUNGER OBTAINED
+The first fragment has been reclaimed."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1122150693]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_0mi2e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=950654494]
+position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_0oe0y")
+
+[node name="PickupSFX" type="AudioStreamPlayer" parent="." unique_id=2070485501]
+stream = ExtResource("3_0oe0y")
+volume_db = -15.0

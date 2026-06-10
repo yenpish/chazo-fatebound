@@ -12,4 +12,4 @@ func _ready() -> void:
 
 func _on_start_button_pressed() -> void:
 	DemoState.reset_demo_state()
-	get_tree().change_scene_to_file("res://scenes/levels/mossgrave_outskirts.tscn")
+	get_tree().change_scene_to_file("res://scenes/tutorial_room.tscn")

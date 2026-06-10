@@ -16,11 +16,26 @@ func _ready() -> void:
 	game_over_label.visible = false
 	hp_label.visible = false
 
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player:
+		if not player.hp_changed.is_connected(update_hp):
+			player.hp_changed.connect(update_hp)
+
+		if not player.player_died.is_connected(show_game_over):
+			player.player_died.connect(show_game_over)
+			
+		update_hp(player.current_hp, player.max_hp)
+
 func setup_message_label() -> void:
-	message_label.position = Vector2(16, 54)
-	message_label.size = Vector2(480, 90)
+	message_label.position = Vector2(125, 100)
+	message_label.size = Vector2(900, 80)
+
+	message_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	message_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+
 	message_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	message_label.clip_text = true
+	message_label.clip_text = false
 	message_label.visible = false
 
 func update_hp(current_hp: int, max_hp: int) -> void:
@@ -56,6 +71,8 @@ func show_game_over() -> void:
 
 func show_message(message: String) -> void:
 	print(message)
+
+	message_label.modulate = Color.RED
 
 	message_queue.append(message)
 

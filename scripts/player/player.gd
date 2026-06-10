@@ -17,10 +17,10 @@ signal player_died
 @onready var placeholder_sprite: Sprite2D = $PlaceholderSprite
 @onready var body_collision: CollisionShape2D = $CollisionShape2D
 
-const CHAZO_DOWN_TEXTURE: Texture2D = preload("res://assets/sprites/chazo-down.png")
-const CHAZO_RIGHT_TEXTURE: Texture2D = preload("res://assets/sprites/chazo-right.png")
-const CHAZO_LEFT_TEXTURE: Texture2D = preload("res://assets/sprites/chazo-left.png")
-const CHAZO_UP_TEXTURE: Texture2D = preload("res://assets/sprites/chazo-up.png")
+const CHAZO_DOWN_TEXTURE: Texture2D = preload("res://assets/sprites/front.png")
+const CHAZO_RIGHT_TEXTURE: Texture2D = preload("res://assets/sprites/right.png")
+const CHAZO_LEFT_TEXTURE: Texture2D = preload("res://assets/sprites/left.png")
+const CHAZO_UP_TEXTURE: Texture2D = preload("res://assets/sprites/back.png")
 
 var current_hp: int
 var is_attacking: bool = false
@@ -35,7 +35,7 @@ var is_invulnerable: bool = false
 func _ready() -> void:
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	add_to_group("player")
-	current_hp = max_hp
+	current_hp = clamp(DemoState.player_hp, 0, max_hp)
 	
 	attack_collision.disabled = true
 	attack_area.monitoring = false
@@ -128,9 +128,13 @@ func handle_attack() -> void:
 
 func handle_restart() -> void:
 	if Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
+		DemoState.reset_demo_state()
+		get_tree().change_scene_to_file(
+			"res://scenes/tutorial_room.tscn"
+		)
 
 func attack() -> void:
+	$AttackSFX.play()
 	is_attacking = true
 	update_attack_area_position()
 	attack_area.monitoring = true
@@ -139,12 +143,19 @@ func attack() -> void:
 	print("Player attacked toward: ", last_direction)
 	await get_tree().physics_frame
 
-	for body in attack_area.get_overlapping_bodies():
-		if body == self or body.is_in_group("player"):
+	for area in attack_area.get_overlapping_areas():
+
+		if area.name != "Hurtbox":
 			continue
-		if body.has_method("take_damage"):
-			body.take_damage(attack_damage)
-			trigger_hitstop(0.05)  # small pause on hit
+
+		var target = area.get_parent()
+
+		if target == self:
+			continue
+
+		if target.has_method("take_damage"):
+			target.take_damage(attack_damage)
+			trigger_hitstop(0.05)
 
 	await get_tree().create_timer(attack_duration).timeout
 	attack_collision.disabled = true
@@ -155,8 +166,13 @@ func take_damage(amount: int) -> void:
 	if is_dead or is_invulnerable:
 		return
 
+	$HurtSFX.play()
+
 	current_hp -= amount
 	current_hp = max(current_hp, 0)
+	
+	DemoState.player_hp = current_hp
+	
 	hp_changed.emit(current_hp, max_hp)
 	print("Player took ", amount, " damage. HP left: ", current_hp)
 
@@ -189,3 +205,61 @@ func die() -> void:
 	player_died.emit()
 	print("Player defeated / Game Over")
 	print("Press R to restart")
+
+
+func _on_exit_trigger_body_entered(body: Node2D) -> void:
+	if body == self:
+		get_tree().call_deferred(
+			"change_scene_to_file",
+			"res://scenes/forked_forest.tscn"
+		)
+
+func _on_exit_to_pendant_body_entered(body: Node2D) -> void:
+	if body == self:
+		get_tree().call_deferred(
+			"change_scene_to_file",
+			"res://scenes/pendant_room.tscn"
+		)
+
+func _on_exit_to_grove_body_entered(body: Node2D) -> void:
+	if body == self:
+		get_tree().call_deferred(
+			"change_scene_to_file",
+			"res://scenes/corrupted_grove.tscn"
+		)
+
+func _on_exit_to_boss_body_entered(body: Node2D) -> void:
+	if body == self:
+		get_tree().call_deferred(
+			"change_scene_to_file",
+			"res://scenes/boss_room.tscn"
+		)
+
+
+func _on_exit_back_to_forest_body_entered(body: Node2D) -> void:
+	if body == self:
+		get_tree().call_deferred(
+			"change_scene_to_file",
+			"res://scenes/forked_forest.tscn"
+		)
+
+
+func _on_exit_to_ending_body_entered(body):
+	print("Ending trigger touched")
+
+	if !body.is_in_group("player"):
+		print("Not player")
+		return
+
+	print("Player detected")
+
+	if !DemoState.eclipse_shard_collected:
+		print("Shard not collected")
+		return
+
+	print("Loading ending scene")
+
+	get_tree().call_deferred(
+		"change_scene_to_file",
+		"res://scenes/ui/demo_end.tscn"
+	)

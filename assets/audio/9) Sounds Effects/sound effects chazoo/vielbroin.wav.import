@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvkqouu2bq11v"
+path="res://.godot/imported/vielbroin.wav-a45a21382fa7bfd6e1bc64f348b09bb8.sample"
+
+[deps]
+
+source_file="res://assets/audio/9) Sounds Effects/sound effects chazoo/vielbroin.wav"
+dest_files=["res://.godot/imported/vielbroin.wav-a45a21382fa7bfd6e1bc64f348b09bb8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,22 @@
+{
+  "group_id": null,
+  "objects": [
+    {
+      "id": "98d6177f-5135-4de9-813c-c7a9156e589c",
+      "name": null,
+      "prompt": "Well-kept sacred relic inspired by a legendary academic crest, elegant and timeless",
+      "size": {
+        "width": 139,
+        "height": 139
+      },
+      "directions": 1,
+      "view": "low top-down",
+      "rotations": {
+        "unknown": "rotations/unknown.png"
+      },
+      "animations": {}
+    }
+  ],
+  "export_version": "1.0",
+  "export_date": "2026-06-10T15:48:13.207477"
+}

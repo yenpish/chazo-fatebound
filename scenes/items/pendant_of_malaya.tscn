@@ -1,20 +1,27 @@
 [gd_scene format=3 uid="uid://mfuonb32vn1q"]
 
 [ext_resource type="Script" uid="uid://b74tirrw277nq" path="res://scripts/items/pickup_item.gd" id="1_e4ljj"]
-[ext_resource type="Texture2D" uid="uid://cy007subigwsk" path="res://icon.svg" id="2_e4ppc"]
+[ext_resource type="Texture2D" uid="uid://r3tvf0j475ow" path="res://assets/sprites/16) Pendant Of Malaya 2/Well-kept_sacred_relic_inspired_by_a_leg/rotations/unknown.png" id="2_e4ppc"]
+[ext_resource type="AudioStream" uid="uid://bm5iio2q63x8k" path="res://assets/audio/9) Sounds Effects/sound effects chazoo/collecting.wav" id="3_wi3vj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi3vj"]
-radius = 20.0
+radius = 14.0
 
 [node name="PendantOfMalaya" type="Area2D" unique_id=1851028104]
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_e4ljj")
 item_id = "pendant_of_malaya"
 item_name = "Pendant of Malaya"
-pickup_message = "Pendant of Malaya Found - A blue-gold pendant engraved with a distant scholar’s crest."
+pickup_message = "You obtained the Pendant of Malaya. An ancient protective power awakens."
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1446469644]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_e4ppc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=926333046]
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_wi3vj")
+
+[node name="PickupSFX" type="AudioStreamPlayer" parent="." unique_id=861441658]
+stream = ExtResource("3_wi3vj")
+volume_db = -15.0

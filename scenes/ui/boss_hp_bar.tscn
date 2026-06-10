@@ -7,6 +7,7 @@
 script = ExtResource("1_r8xh3")
 
 [node name="BossBarTexture" type="TextureRect" parent="." unique_id=381299245]
+visible = false
 offset_left = 326.0
 offset_top = 48.0
 offset_right = 826.0
@@ -24,3 +25,10 @@ theme_override_font_sizes/font_size = 20
 text = "Brakkor, the Rootbound Maw"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=626432042]
+custom_minimum_size = Vector2(300, 24)
+offset_left = 438.0
+offset_top = 69.0
+offset_right = 738.0
+offset_bottom = 96.0

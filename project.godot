@@ -18,6 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 DemoState="*uid://b38fldierhywy"
+MusicManager="*uid://k54sv12hf2xk"
+
+[filesystem]
+
+import/autoload_on_startup=false
+import/main_scene="uid://be8olkdsyrlv7"
 
 [input]
 

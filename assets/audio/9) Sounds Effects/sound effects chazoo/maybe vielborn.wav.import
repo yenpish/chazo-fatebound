@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db4y7mpsh0efs"
+path="res://.godot/imported/maybe vielborn.wav-018e8f9c3cfc0092b5c047cd70d13a5c.sample"
+
+[deps]
+
+source_file="res://assets/audio/9) Sounds Effects/sound effects chazoo/maybe vielborn.wav"
+dest_files=["res://.godot/imported/maybe vielborn.wav-018e8f9c3cfc0092b5c047cd70d13a5c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

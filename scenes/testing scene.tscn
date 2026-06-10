@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cpjslbpn4jauh"]
+
+[ext_resource type="PackedScene" uid="uid://dm8vfg8xdixaf" path="res://scenes/player/player.tscn" id="1_snw0m"]
+[ext_resource type="PackedScene" uid="uid://dqrkrjyouy0vl" path="res://scenes/enemies/veilborn_grunt.tscn" id="2_l6vi8"]
+
+[node name="Node2D" type="Node2D" unique_id=273501252]
+
+[node name="Player" parent="." unique_id=1997026455 instance=ExtResource("1_snw0m")]
+
+[node name="VeilbornGrunt" parent="." unique_id=633401214 instance=ExtResource("2_l6vi8")]

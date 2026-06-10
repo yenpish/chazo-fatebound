@@ -1,0 +1,873 @@
+[gd_scene format=4 uid="uid://cn3tqq05ei734"]
+
+[ext_resource type="Texture2D" uid="uid://dwvxtmbtx7skm" path="res://assets/sprites/12) Dark Horror Forest Tileset/tile-B-04.png" id="1_o66up"]
+[ext_resource type="Texture2D" uid="uid://cy4b2jrk086oh" path="res://assets/sprites/12) Dark Horror Forest Tileset/tile-B-05.png" id="2_700jc"]
+[ext_resource type="Texture2D" uid="uid://dudk3v5sjoxdn" path="res://assets/sprites/12) Dark Horror Forest Tileset/tile-B-06.png" id="3_1bogk"]
+[ext_resource type="Texture2D" uid="uid://b7isxri2mpnfh" path="res://assets/sprites/12) Dark Horror Forest Tileset/tile-B-01.png" id="4_s440l"]
+[ext_resource type="Texture2D" uid="uid://bglj1dth8obyu" path="res://assets/sprites/12) Dark Horror Forest Tileset/tile-B-02.png" id="5_yrghc"]
+[ext_resource type="Texture2D" uid="uid://dksdsj3wxq7v5" path="res://assets/sprites/12) Dark Horror Forest Tileset/tile-B-03.png" id="6_p16px"]
+[ext_resource type="PackedScene" uid="uid://dm8vfg8xdixaf" path="res://scenes/player/player.tscn" id="7_587rf"]
+[ext_resource type="PackedScene" uid="uid://cu4vkvipusaep" path="res://scenes/slime.tscn" id="8_700jc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_astjp"]
+texture = ExtResource("1_o66up")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ryk5m"]
+texture = ExtResource("2_700jc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yd6fn"]
+texture = ExtResource("3_1bogk")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xk0h"]
+texture = ExtResource("4_s440l")
+11:23/0 = 0
+10:23/0 = 0
+9:23/0 = 0
+8:23/0 = 0
+7:23/0 = 0
+6:23/0 = 0
+5:23/0 = 0
+4:23/0 = 0
+3:23/0 = 0
+2:23/0 = 0
+1:23/0 = 0
+0:23/0 = 0
+0:22/0 = 0
+0:21/0 = 0
+0:20/0 = 0
+0:19/0 = 0
+1:21/0 = 0
+1:22/0 = 0
+1:20/0 = 0
+1:19/0 = 0
+1:18/0 = 0
+0:18/0 = 0
+0:17/0 = 0
+0:16/0 = 0
+0:15/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+1:15/0 = 0
+1:17/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+5:20/0 = 0
+5:21/0 = 0
+4:22/0 = 0
+3:22/0 = 0
+3:21/0 = 0
+3:20/0 = 0
+3:19/0 = 0
+4:18/0 = 0
+2:21/0 = 0
+2:20/0 = 0
+2:19/0 = 0
+2:22/0 = 0
+4:20/0 = 0
+4:21/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:21/0 = 0
+6:21/0 = 0
+8:21/0 = 0
+8:20/0 = 0
+8:19/0 = 0
+7:18/0 = 0
+6:17/0 = 0
+6:18/0 = 0
+6:19/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+10:22/0 = 0
+11:22/0 = 0
+11:21/0 = 0
+11:20/0 = 0
+11:19/0 = 0
+11:18/0 = 0
+11:17/0 = 0
+11:16/0 = 0
+11:15/0 = 0
+11:14/0 = 0
+11:13/0 = 0
+10:13/0 = 0
+9:13/0 = 0
+8:13/0 = 0
+7:13/0 = 0
+6:13/0 = 0
+5:13/0 = 0
+4:13/0 = 0
+3:13/0 = 0
+2:13/0 = 0
+1:13/0 = 0
+0:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+10:15/0 = 0
+10:16/0 = 0
+10:17/0 = 0
+10:18/0 = 0
+10:19/0 = 0
+9:18/0 = 0
+9:17/0 = 0
+8:17/0 = 0
+8:18/0 = 0
+9:16/0 = 0
+8:16/0 = 0
+9:19/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+10:21/0 = 0
+9:21/0 = 0
+7:17/0 = 0
+6:16/0 = 0
+7:19/0 = 0
+7:16/0 = 0
+7:15/0 = 0
+6:15/0 = 0
+5:16/0 = 0
+5:17/0 = 0
+4:17/0 = 0
+5:15/0 = 0
+5:18/0 = 0
+4:15/0 = 0
+3:16/0 = 0
+3:17/0 = 0
+2:17/0 = 0
+4:16/0 = 0
+3:15/0 = 0
+2:15/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+0:24/0 = 0
+1:24/0 = 0
+2:24/0 = 0
+3:24/0 = 0
+4:24/0 = 0
+5:24/0 = 0
+6:24/0 = 0
+7:24/0 = 0
+8:24/0 = 0
+9:24/0 = 0
+10:24/0 = 0
+11:24/0 = 0
+11:25/0 = 0
+11:26/0 = 0
+11:27/0 = 0
+11:28/0 = 0
+11:29/0 = 0
+11:30/0 = 0
+11:31/0 = 0
+11:32/0 = 0
+11:33/0 = 0
+11:34/0 = 0
+11:35/0 = 0
+10:35/0 = 0
+9:35/0 = 0
+8:35/0 = 0
+7:35/0 = 0
+6:35/0 = 0
+5:35/0 = 0
+4:35/0 = 0
+3:35/0 = 0
+2:35/0 = 0
+1:35/0 = 0
+0:35/0 = 0
+0:34/0 = 0
+0:33/0 = 0
+0:32/0 = 0
+0:31/0 = 0
+0:30/0 = 0
+0:29/0 = 0
+0:28/0 = 0
+0:27/0 = 0
+0:26/0 = 0
+0:25/0 = 0
+1:25/0 = 0
+2:25/0 = 0
+3:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+7:25/0 = 0
+8:25/0 = 0
+9:25/0 = 0
+10:25/0 = 0
+10:26/0 = 0
+10:27/0 = 0
+10:28/0 = 0
+9:27/0 = 0
+8:27/0 = 0
+7:27/0 = 0
+6:28/0 = 0
+5:28/0 = 0
+4:28/0 = 0
+5:27/0 = 0
+6:27/0 = 0
+7:26/0 = 0
+8:26/0 = 0
+4:27/0 = 0
+3:28/0 = 0
+2:28/0 = 0
+1:28/0 = 0
+7:28/0 = 0
+5:29/0 = 0
+4:29/0 = 0
+3:29/0 = 0
+2:29/0 = 0
+1:30/0 = 0
+2:30/0 = 0
+3:30/0 = 0
+4:30/0 = 0
+5:30/0 = 0
+6:30/0 = 0
+7:30/0 = 0
+5:31/0 = 0
+4:31/0 = 0
+3:32/0 = 0
+4:32/0 = 0
+5:32/0 = 0
+6:32/0 = 0
+7:31/0 = 0
+8:31/0 = 0
+9:31/0 = 0
+6:31/0 = 0
+2:32/0 = 0
+8:30/0 = 0
+9:29/0 = 0
+10:29/0 = 0
+3:31/0 = 0
+6:29/0 = 0
+2:31/0 = 0
+1:31/0 = 0
+7:29/0 = 0
+8:28/0 = 0
+9:28/0 = 0
+8:29/0 = 0
+1:33/0 = 0
+1:34/0 = 0
+2:33/0 = 0
+3:33/0 = 0
+4:33/0 = 0
+5:33/0 = 0
+6:33/0 = 0
+7:33/0 = 0
+5:34/0 = 0
+4:34/0 = 0
+3:34/0 = 0
+2:34/0 = 0
+6:34/0 = 0
+7:34/0 = 0
+8:34/0 = 0
+9:34/0 = 0
+10:34/0 = 0
+10:33/0 = 0
+10:32/0 = 0
+10:31/0 = 0
+10:30/0 = 0
+9:30/0 = 0
+8:32/0 = 0
+8:33/0 = 0
+9:33/0 = 0
+9:32/0 = 0
+7:32/0 = 0
+1:32/0 = 0
+1:29/0 = 0
+1:27/0 = 0
+1:26/0 = 0
+2:26/0 = 0
+3:26/0 = 0
+2:27/0 = 0
+3:27/0 = 0
+6:26/0 = 0
+5:26/0 = 0
+4:26/0 = 0
+11:11/0 = 0
+10:11/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+9:10/0 = 0
+8:10/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+7:11/0 = 0
+7:10/0 = 0
+6:11/0 = 0
+6:10/0 = 0
+5:10/0 = 0
+5:11/0 = 0
+4:11/0 = 0
+4:10/0 = 0
+3:10/0 = 0
+2:10/0 = 0
+2:11/0 = 0
+1:10/0 = 0
+1:11/0 = 0
+0:11/0 = 0
+0:10/0 = 0
+3:11/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+11:1/0 = 0
+11:2/0 = 0
+11:3/0 = 0
+11:4/0 = 0
+11:5/0 = 0
+11:6/0 = 0
+11:7/0 = 0
+11:8/0 = 0
+11:9/0 = 0
+10:9/0 = 0
+9:9/0 = 0
+8:9/0 = 0
+7:9/0 = 0
+6:9/0 = 0
+5:9/0 = 0
+4:9/0 = 0
+3:9/0 = 0
+2:9/0 = 0
+1:9/0 = 0
+0:9/0 = 0
+0:8/0 = 0
+0:7/0 = 0
+0:6/0 = 0
+0:5/0 = 0
+0:4/0 = 0
+0:3/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+2:3/0 = 0
+2:4/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+2:7/0 = 0
+2:8/0 = 0
+1:8/0 = 0
+1:7/0 = 0
+1:6/0 = 0
+1:5/0 = 0
+1:4/0 = 0
+1:3/0 = 0
+2:2/0 = 0
+3:6/0 = 0
+3:7/0 = 0
+3:8/0 = 0
+3:5/0 = 0
+3:4/0 = 0
+3:3/0 = 0
+3:2/0 = 0
+4:6/0 = 0
+4:7/0 = 0
+4:8/0 = 0
+4:5/0 = 0
+4:4/0 = 0
+4:3/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+5:8/0 = 0
+5:7/0 = 0
+6:6/0 = 0
+6:5/0 = 0
+6:4/0 = 0
+6:3/0 = 0
+5:2/0 = 0
+5:3/0 = 0
+5:4/0 = 0
+6:7/0 = 0
+6:8/0 = 0
+5:1/0 = 0
+5:5/0 = 0
+5:6/0 = 0
+4:2/0 = 0
+4:1/0 = 0
+6:2/0 = 0
+6:1/0 = 0
+7:3/0 = 0
+7:4/0 = 0
+7:5/0 = 0
+7:6/0 = 0
+7:7/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+8:7/0 = 0
+8:6/0 = 0
+8:5/0 = 0
+8:4/0 = 0
+8:3/0 = 0
+7:8/0 = 0
+8:2/0 = 0
+8:8/0 = 0
+9:6/0 = 0
+9:5/0 = 0
+9:4/0 = 0
+9:3/0 = 0
+9:7/0 = 0
+9:8/0 = 0
+9:2/0 = 0
+10:3/0 = 0
+10:4/0 = 0
+10:5/0 = 0
+10:6/0 = 0
+10:7/0 = 0
+10:8/0 = 0
+10:2/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+8:1/0 = 0
+12:0/0 = 0
+12:1/0 = 0
+12:2/0 = 0
+12:3/0 = 0
+12:4/0 = 0
+13:5/0 = 0
+13:6/0 = 0
+13:7/0 = 0
+14:8/0 = 0
+14:9/0 = 0
+14:10/0 = 0
+13:10/0 = 0
+9:26/0 = 0
+23:35/0 = 0
+22:35/0 = 0
+21:35/0 = 0
+20:35/0 = 0
+19:34/0 = 0
+18:34/0 = 0
+17:34/0 = 0
+17:33/0 = 0
+16:32/0 = 0
+15:31/0 = 0
+15:30/0 = 0
+15:29/0 = 0
+14:28/0 = 0
+13:27/0 = 0
+12:26/0 = 0
+12:25/0 = 0
+13:26/0 = 0
+14:27/0 = 0
+12:24/0 = 0
+12:27/0 = 0
+12:28/0 = 0
+12:29/0 = 0
+12:30/0 = 0
+12:31/0 = 0
+12:32/0 = 0
+12:33/0 = 0
+12:34/0 = 0
+12:35/0 = 0
+13:24/0 = 0
+13:25/0 = 0
+13:28/0 = 0
+13:29/0 = 0
+13:30/0 = 0
+13:31/0 = 0
+13:32/0 = 0
+13:33/0 = 0
+13:34/0 = 0
+13:35/0 = 0
+14:24/0 = 0
+14:25/0 = 0
+14:26/0 = 0
+14:29/0 = 0
+14:30/0 = 0
+14:31/0 = 0
+14:32/0 = 0
+14:33/0 = 0
+14:34/0 = 0
+14:35/0 = 0
+15:24/0 = 0
+15:25/0 = 0
+15:26/0 = 0
+15:27/0 = 0
+15:28/0 = 0
+15:32/0 = 0
+15:33/0 = 0
+15:34/0 = 0
+15:35/0 = 0
+16:24/0 = 0
+16:25/0 = 0
+16:26/0 = 0
+16:27/0 = 0
+16:28/0 = 0
+16:29/0 = 0
+16:30/0 = 0
+16:31/0 = 0
+16:33/0 = 0
+16:34/0 = 0
+16:35/0 = 0
+17:24/0 = 0
+17:25/0 = 0
+17:26/0 = 0
+17:27/0 = 0
+17:28/0 = 0
+17:29/0 = 0
+17:30/0 = 0
+17:31/0 = 0
+17:32/0 = 0
+17:35/0 = 0
+18:24/0 = 0
+18:25/0 = 0
+18:26/0 = 0
+18:27/0 = 0
+18:28/0 = 0
+18:29/0 = 0
+18:30/0 = 0
+18:31/0 = 0
+18:32/0 = 0
+18:33/0 = 0
+18:35/0 = 0
+19:24/0 = 0
+19:25/0 = 0
+19:26/0 = 0
+19:27/0 = 0
+19:28/0 = 0
+19:29/0 = 0
+19:30/0 = 0
+19:31/0 = 0
+19:32/0 = 0
+19:33/0 = 0
+19:35/0 = 0
+20:24/0 = 0
+20:25/0 = 0
+20:26/0 = 0
+20:27/0 = 0
+20:28/0 = 0
+20:29/0 = 0
+20:30/0 = 0
+20:31/0 = 0
+20:32/0 = 0
+20:33/0 = 0
+20:34/0 = 0
+21:24/0 = 0
+21:25/0 = 0
+21:26/0 = 0
+21:27/0 = 0
+21:28/0 = 0
+21:29/0 = 0
+21:30/0 = 0
+21:31/0 = 0
+21:32/0 = 0
+21:33/0 = 0
+21:34/0 = 0
+22:24/0 = 0
+22:25/0 = 0
+22:26/0 = 0
+22:27/0 = 0
+22:28/0 = 0
+22:29/0 = 0
+22:30/0 = 0
+22:31/0 = 0
+22:32/0 = 0
+22:33/0 = 0
+22:34/0 = 0
+23:24/0 = 0
+23:25/0 = 0
+23:26/0 = 0
+23:27/0 = 0
+23:28/0 = 0
+23:29/0 = 0
+23:30/0 = 0
+23:31/0 = 0
+23:32/0 = 0
+23:33/0 = 0
+23:34/0 = 0
+23:11/0 = 0
+22:10/0 = 0
+21:9/0 = 0
+20:8/0 = 0
+19:7/0 = 0
+18:6/0 = 0
+17:5/0 = 0
+16:4/0 = 0
+15:3/0 = 0
+14:2/0 = 0
+12:5/0 = 0
+12:6/0 = 0
+12:7/0 = 0
+12:8/0 = 0
+12:9/0 = 0
+12:10/0 = 0
+12:11/0 = 0
+13:0/0 = 0
+13:1/0 = 0
+13:2/0 = 0
+13:3/0 = 0
+13:4/0 = 0
+13:8/0 = 0
+13:9/0 = 0
+13:11/0 = 0
+14:0/0 = 0
+14:1/0 = 0
+14:3/0 = 0
+14:4/0 = 0
+14:5/0 = 0
+14:6/0 = 0
+14:7/0 = 0
+14:11/0 = 0
+15:0/0 = 0
+15:1/0 = 0
+15:2/0 = 0
+15:4/0 = 0
+15:5/0 = 0
+15:6/0 = 0
+15:7/0 = 0
+15:8/0 = 0
+15:9/0 = 0
+15:10/0 = 0
+15:11/0 = 0
+16:0/0 = 0
+16:1/0 = 0
+16:2/0 = 0
+16:3/0 = 0
+16:5/0 = 0
+16:6/0 = 0
+16:7/0 = 0
+16:8/0 = 0
+16:9/0 = 0
+16:10/0 = 0
+16:11/0 = 0
+17:0/0 = 0
+17:1/0 = 0
+17:2/0 = 0
+17:3/0 = 0
+17:4/0 = 0
+17:6/0 = 0
+17:7/0 = 0
+17:8/0 = 0
+17:9/0 = 0
+17:10/0 = 0
+17:11/0 = 0
+18:0/0 = 0
+18:1/0 = 0
+18:2/0 = 0
+18:3/0 = 0
+18:4/0 = 0
+18:5/0 = 0
+18:7/0 = 0
+18:8/0 = 0
+18:9/0 = 0
+18:10/0 = 0
+18:11/0 = 0
+19:0/0 = 0
+19:1/0 = 0
+19:2/0 = 0
+19:3/0 = 0
+19:4/0 = 0
+19:5/0 = 0
+19:6/0 = 0
+19:8/0 = 0
+19:9/0 = 0
+19:10/0 = 0
+19:11/0 = 0
+20:0/0 = 0
+20:1/0 = 0
+20:2/0 = 0
+20:3/0 = 0
+20:4/0 = 0
+20:5/0 = 0
+20:6/0 = 0
+20:7/0 = 0
+20:9/0 = 0
+20:10/0 = 0
+20:11/0 = 0
+21:0/0 = 0
+21:1/0 = 0
+21:2/0 = 0
+21:3/0 = 0
+21:4/0 = 0
+21:5/0 = 0
+21:6/0 = 0
+21:7/0 = 0
+21:8/0 = 0
+21:10/0 = 0
+21:11/0 = 0
+22:0/0 = 0
+22:1/0 = 0
+22:2/0 = 0
+22:3/0 = 0
+22:4/0 = 0
+22:5/0 = 0
+22:6/0 = 0
+22:7/0 = 0
+22:8/0 = 0
+22:9/0 = 0
+22:11/0 = 0
+23:0/0 = 0
+23:1/0 = 0
+23:2/0 = 0
+23:3/0 = 0
+23:4/0 = 0
+23:5/0 = 0
+23:6/0 = 0
+23:7/0 = 0
+23:8/0 = 0
+23:9/0 = 0
+23:10/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6uvbj"]
+texture = ExtResource("5_yrghc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffrmj"]
+texture = ExtResource("6_p16px")
+
+[sub_resource type="TileSet" id="TileSet_uigur"]
+sources/7 = SubResource("TileSetAtlasSource_3xk0h")
+sources/8 = SubResource("TileSetAtlasSource_6uvbj")
+sources/9 = SubResource("TileSetAtlasSource_ffrmj")
+sources/10 = SubResource("TileSetAtlasSource_astjp")
+sources/11 = SubResource("TileSetAtlasSource_ryk5m")
+sources/12 = SubResource("TileSetAtlasSource_yd6fn")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yncoe"]
+size = Vector2(194, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2urpk"]
+size = Vector2(195, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otjdj"]
+size = Vector2(1, 402)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s04q"]
+size = Vector2(1, 402)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pia6w"]
+size = Vector2(40, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0j06"]
+size = Vector2(42, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyiw4"]
+size = Vector2(48, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvoyc"]
+size = Vector2(44, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iev3h"]
+size = Vector2(66, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fi4w"]
+size = Vector2(11, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcg1k"]
+size = Vector2(32, 57.25)
+
+[node name="ForkedForest" type="Node2D" unique_id=1616469181]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2058361510]
+position = Vector2(-2, 0)
+tile_map_data = PackedByteArray("AAD0//L/BwAAAAsAAAD0//P/BwAAAAwAAAD0//T/BwAAAA0AAAD0//X/BwAAAA4AAAD0//b/BwAAAA8AAAD0//f/BwAAABAAAAD0//j/BwAAABEAAAD0//n/BwAAABIAAAD0//r/BwAAABMAAAD0//v/BwAAABQAAAD0//z/BwAAABUAAAD0//3/BwAAABYAAAD0//7/BwAAABcAAAD0////BwAMABgAAAD1//L/BwABAAsAAAD1//P/BwABAAwAAAD1//T/BwABAA0AAAD1//X/BwABAA4AAAD1//b/BwABAA8AAAD1//f/BwABABAAAAD1//j/BwABABEAAAD1//n/BwABABIAAAD1//r/BwABABMAAAD1//v/BwABABQAAAD1//z/BwABABUAAAD1//3/BwABABYAAAD1//7/BwABABcAAAD1////BwANABgAAAD2//L/BwACAAsAAAD2//P/BwACAAwAAAD2//T/BwACAA0AAAD2//X/BwACAA4AAAD2//b/BwACAA8AAAD2//f/BwACABAAAAD2//j/BwACABEAAAD2//n/BwACABIAAAD2//r/BwACABMAAAD2//v/BwACABQAAAD2//z/BwACABUAAAD2//3/BwACABYAAAD2//7/BwACABcAAAD2////BwAOABgAAAD3//L/BwADAAsAAAD3//P/BwADAAwAAAD3//T/BwADAA0AAAD3//X/BwADAA4AAAD3//b/BwADAA8AAAD3//f/BwADABAAAAD3//j/BwADABEAAAD3//n/BwADABIAAAD3//r/BwADABMAAAD3//v/BwADABQAAAD3//z/BwADABUAAAD3//3/BwADABYAAAD3//7/BwADABcAAAD3////BwAPABgAAAD4//L/BwAEAAsAAAD4//P/BwAEAAwAAAD4//T/BwAEAA0AAAD4//X/BwAEAA4AAAD4//b/BwAEAA8AAAD4//f/BwAEABAAAAD4//j/BwAEABEAAAD4//n/BwAEABIAAAD4//r/BwAEABMAAAD4//v/BwAEABQAAAD4//z/BwAEABUAAAD4//3/BwAEABYAAAD4//7/BwAEABcAAAD4////BwAQABgAAAD5//L/BwAFAAsAAAD5//P/BwAFAAwAAAD5//T/BwAFAA0AAAD5//X/BwAFAA4AAAD5//b/BwAFAA8AAAD5//f/BwAFABAAAAD5//j/BwAFABEAAAD5//n/BwAFABIAAAD5//r/BwAFABMAAAD5//v/BwAFABQAAAD5//z/BwAFABUAAAD5//3/BwAFABYAAAD5//7/BwAFABcAAAD5////BwARABgAAAD6//L/BwAGAAsAAAD6//P/BwAGAAwAAAD6//T/BwAGAA0AAAD6//X/BwAGAA4AAAD6//b/BwAGAA8AAAD6//f/BwAGABAAAAD6//j/BwAGABEAAAD6//n/BwAGABIAAAD6//r/BwAGABMAAAD6//v/BwAGABQAAAD6//z/BwAGABUAAAD6//3/BwAGABYAAAD6//7/BwAGABcAAAD6////BwASABgAAAD7//L/BwAHAAsAAAD7//P/BwAHAAwAAAD7//T/BwAHAA0AAAD7//X/BwAHAA4AAAD7//b/BwAHAA8AAAD7//f/BwAHABAAAAD7//j/BwAHABEAAAD7//n/BwAHABIAAAD7//r/BwAHABMAAAD7//v/BwAHABQAAAD7//z/BwAHABUAAAD7//3/BwAHABYAAAD7//7/BwAHABcAAAD7////BwATABgAAAD8//L/BwAIAAsAAAD8//P/BwAIAAwAAAD8//T/BwAIAA0AAAD8//X/BwAIAA4AAAD8//b/BwAIAA8AAAD8//f/BwAIABAAAAD8//j/BwAIABEAAAD8//n/BwAIABIAAAD8//r/BwAIABMAAAD8//v/BwAIABQAAAD8//z/BwAIABUAAAD8//3/BwAIABYAAAD8//7/BwAIABcAAAD8////BwAUABgAAAD9//L/BwAJAAsAAAD9//P/BwAJAAwAAAD9//T/BwAJAA0AAAD9//X/BwAJAA4AAAD9//b/BwAJAA8AAAD9//f/BwAJABAAAAD9//j/BwAJABEAAAD9//n/BwAJABIAAAD9//r/BwAJABMAAAD9//v/BwAJABQAAAD9//z/BwAJABUAAAD9//3/BwAJABYAAAD9//7/BwAJABcAAAD9////BwAVABgAAAD+//L/BwAKAAsAAAD+//P/BwAKAAwAAAD+//T/BwAKAA0AAAD+//X/BwAKAA4AAAD+//b/BwAKAA8AAAD+//f/BwAKABAAAAD+//j/BwAKABEAAAD+//n/BwAKABIAAAD+//r/BwAKABMAAAD+//v/BwAKABQAAAD+//z/BwAKABUAAAD+//3/BwAKABYAAAD+//7/BwAKABcAAAD+////BwAWABgAAAD///L/BwALAAsAAAD///P/BwALAAwAAAD///T/BwALAA0AAAD///X/BwALAA4AAAD///b/BwALAA8AAAD///f/BwALABAAAAD///j/BwALABEAAAD///n/BwALABIAAAD///r/BwALABMAAAD///v/BwALABQAAAD///z/BwALABUAAAD///3/BwALABYAAAD0/wAABwAMABkAAAD0/wEABwAMABoAAAD0/wIABwAMABsAAAD0/wMABwAMABwAAAD0/wQABwAMAB0AAAD0/wUABwAMAB4AAAD0/wYABwAMAB8AAAD0/wcABwAMACAAAAD0/wgABwAMACEAAAD0/wkABwAMACIAAAD0/woABwAMACMAAAD1/wAABwANABkAAAD1/wEABwANABoAAAD1/wIABwANABsAAAD1/wMABwANABwAAAD1/wQABwANAB0AAAD1/wUABwANAB4AAAD1/wYABwANAB8AAAD1/wcABwANACAAAAD1/wgABwANACEAAAD1/wkABwANACIAAAD1/woABwANACMAAAD2/wAABwAOABkAAAD2/wEABwAOABoAAAD2/wIABwAOABsAAAD2/wMABwAOABwAAAD2/wQABwAOAB0AAAD2/wUABwAOAB4AAAD2/wYABwAOAB8AAAD2/wcABwAOACAAAAD2/wgABwAOACEAAAD2/wkABwAOACIAAAD2/woABwAOACMAAAD3/wAABwAPABkAAAD3/wEABwAPABoAAAD3/wIABwAPABsAAAD3/wMABwAPABwAAAD3/wQABwAPAB0AAAD3/wUABwAPAB4AAAD3/wYABwAPAB8AAAD3/wcABwAPACAAAAD3/wgABwAPACEAAAD3/wkABwAPACIAAAD3/woABwAPACMAAAD4/wAABwAQABkAAAD4/wEABwAQABoAAAD4/wIABwAQABsAAAD4/wMABwAQABwAAAD4/wQABwAQAB0AAAD4/wUABwAQAB4AAAD4/wYABwAQAB8AAAD4/wcABwAQACAAAAD4/wgABwAQACEAAAD4/wkABwAQACIAAAD4/woABwAQACMAAAD5/wAABwARABkAAAD5/wEABwARABoAAAD5/wIABwARABsAAAD5/wMABwARABwAAAD5/wQABwARAB0AAAD5/wUABwARAB4AAAD5/wYABwARAB8AAAD5/wcABwARACAAAAD5/wgABwARACEAAAD5/wkABwARACIAAAD5/woABwARACMAAAD6/wAABwASABkAAAD6/wEABwASABoAAAD6/wIABwASABsAAAD6/wMABwASABwAAAD6/wQABwASAB0AAAD6/wUABwASAB4AAAD6/wYABwASAB8AAAD6/wcABwASACAAAAD6/wgABwASACEAAAD6/wkABwASACIAAAD6/woABwASACMAAAD7/wAABwATABkAAAD7/wEABwATABoAAAD7/wIABwATABsAAAD7/wMABwATABwAAAD7/wQABwATAB0AAAD7/wUABwATAB4AAAD7/wYABwATAB8AAAD7/wcABwATACAAAAD7/wgABwATACEAAAD7/wkABwATACIAAAD7/woABwATACMAAAD8/wAABwAUABkAAAD8/wEABwAUABoAAAD8/wIABwAUABsAAAD8/wMABwAUABwAAAD8/wQABwAUAB0AAAD8/wUABwAUAB4AAAD8/wYABwAUAB8AAAD8/wcABwAUACAAAAD8/wgABwAUACEAAAD8/wkABwAUACIAAAD8/woABwAUACMAAAD9/wAABwAVABkAAAD9/wEABwAVABoAAAD9/wIABwAVABsAAAD9/wMABwAVABwAAAD9/wQABwAVAB0AAAD9/wUABwAVAB4AAAD9/wYABwAVAB8AAAD9/wcABwAVACAAAAD9/wgABwAVACEAAAD9/wkABwAVACIAAAD9/woABwAVACMAAAD+/wAABwAWABkAAAD+/wEABwAWABoAAAD+/wIABwAWABsAAAD+/wMABwAWABwAAAD+/wQABwAWAB0AAAD+/wUABwAWAB4AAAD+/wYABwAWAB8AAAD+/wcABwAWACAAAAD+/wgABwAWACEAAAD+/wkABwAWACIAAAD+/woABwAWACMAAAD/////BwAXABgAAAD//wAABwAXABkAAAD//wEABwAXABoAAAD//wIABwAXABsAAAD//wMABwAXABwAAAD//wQABwAXAB0AAAD//wUABwAXAB4AAAD//wYABwAXAB8AAAD//wcABwAXACAAAAD//wgABwAXACEAAAD//wkABwAXACIAAAD//woABwAXACMAAAA=")
+tile_set = SubResource("TileSet_uigur")
+
+[node name="Player" parent="." unique_id=1997026455 instance=ExtResource("7_587rf")]
+position = Vector2(-96, -145)
+
+[node name="Slime" parent="." unique_id=1300809920 instance=ExtResource("8_700jc")]
+position = Vector2(-99, -50)
+
+[node name="WorldCollision" type="Node2D" parent="." unique_id=412215122]
+
+[node name="TopWall" type="StaticBody2D" parent="WorldCollision" unique_id=2061361249]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/TopWall" unique_id=1125179347]
+position = Vector2(-98, -225.5)
+shape = SubResource("RectangleShape2D_yncoe")
+
+[node name="BottomWall" type="StaticBody2D" parent="WorldCollision" unique_id=344391433]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/BottomWall" unique_id=41598979]
+position = Vector2(-97.5, 176.5)
+shape = SubResource("RectangleShape2D_2urpk")
+
+[node name="LeftWall" type="StaticBody2D" parent="WorldCollision" unique_id=1249605960]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/LeftWall" unique_id=434166005]
+position = Vector2(-194.5, -24)
+shape = SubResource("RectangleShape2D_otjdj")
+
+[node name="RightWall" type="StaticBody2D" parent="WorldCollision" unique_id=809548856]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/RightWall" unique_id=1749836289]
+position = Vector2(-1.5, -24)
+shape = SubResource("RectangleShape2D_2s04q")
+
+[node name="TopTreesRight" type="StaticBody2D" parent="WorldCollision" unique_id=1259436866]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/TopTreesRight" unique_id=1787818149]
+position = Vector2(-23, -195)
+shape = SubResource("RectangleShape2D_pia6w")
+
+[node name="TopTreesLeft" type="StaticBody2D" parent="WorldCollision" unique_id=1132391214]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/TopTreesLeft" unique_id=1730368507]
+position = Vector2(-172, -193.5)
+shape = SubResource("RectangleShape2D_d0j06")
+
+[node name="TreeStump" type="StaticBody2D" parent="WorldCollision" unique_id=1641892563]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/TreeStump" unique_id=2072127991]
+position = Vector2(-152, -11.5)
+shape = SubResource("RectangleShape2D_jyiw4")
+
+[node name="BushRight" type="StaticBody2D" parent="WorldCollision" unique_id=2013439745]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/BushRight" unique_id=1708706794]
+position = Vector2(-25, -41)
+shape = SubResource("RectangleShape2D_hvoyc")
+disabled = true
+
+[node name="Bones" type="StaticBody2D" parent="WorldCollision" unique_id=1655139329]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/Bones" unique_id=859547522]
+position = Vector2(-42, 8)
+shape = SubResource("RectangleShape2D_iev3h")
+disabled = true
+
+[node name="Bones2" type="StaticBody2D" parent="WorldCollision" unique_id=1594670360]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/Bones2" unique_id=478215430]
+position = Vector2(-12, 40)
+shape = SubResource("RectangleShape2D_3fi4w")
+disabled = true
+
+[node name="BushLeft" type="StaticBody2D" parent="WorldCollision" unique_id=445437438]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldCollision/BushLeft" unique_id=1058474176]
+position = Vector2(-177, -45.625)
+shape = SubResource("RectangleShape2D_mcg1k")

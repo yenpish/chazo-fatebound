@@ -25,5 +25,10 @@ func _on_body_entered(body: Node2D) -> void:
 	var hud := get_tree().get_first_node_in_group("hud")
 	if hud != null and hud.has_method("show_message"):
 		hud.show_message(pickup_message)
+	
+	if has_node("PickupSFX"):
+		$PickupSFX.play()
+
+		await get_tree().create_timer(0.3).timeout
 
 	queue_free()

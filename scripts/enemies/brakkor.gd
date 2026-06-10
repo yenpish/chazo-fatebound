@@ -7,12 +7,12 @@ var boss_hp_bar: Node = null
 
 
 func _ready() -> void:
-	max_hp = 12
-	move_speed = 55.0
+	max_hp = 8
+	move_speed = 90.0
 	contact_damage = 1
-	damage_cooldown = 1.2
+	damage_cooldown = 0.8
 	chase_range = 700.0
-	stop_distance = 55.0
+	stop_distance = 20.0
 	
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	current_hp = max_hp
@@ -37,6 +37,29 @@ func _physics_process(_delta: float) -> void:
 		find_player()
 
 	chase_player()
+	
+	if placeholder_sprite is AnimatedSprite2D:
+
+		var touching_player := false
+
+		if damage_area != null:
+			for body in damage_area.get_overlapping_bodies():
+				if body.is_in_group("player"):
+					touching_player = true
+					break
+
+		if touching_player:
+			placeholder_sprite.play("attack1")
+
+		elif velocity.length() > 0:
+			placeholder_sprite.play("walk")
+
+		else:
+			placeholder_sprite.play("idle")
+
+		if player != null:
+			placeholder_sprite.flip_h = player.global_position.x > global_position.x
+	
 	check_player_contact_damage()
 
 
@@ -59,7 +82,6 @@ func chase_player() -> void:
 		velocity = Vector2.ZERO
 
 	move_and_slide()
-
 
 func check_player_contact_damage() -> void:
 	if not can_damage_player:
@@ -117,18 +139,32 @@ func flash_hit() -> void:
 
 func die() -> void:
 	is_dead = true
+	
+	$DeathSFX.play()
+	
 	velocity = Vector2.ZERO
 	print(name, " defeated")
 
 	if boss_hp_bar != null and boss_hp_bar.has_method("update_boss_hp"):
 		boss_hp_bar.update_boss_hp(0, max_hp)
 
-	await get_tree().create_timer(0.5).timeout
+	if placeholder_sprite is AnimatedSprite2D:
+		placeholder_sprite.play("die")
+
+		await placeholder_sprite.animation_finished
+	else:
+		await get_tree().create_timer(0.5).timeout
 
 	if boss_hp_bar != null and boss_hp_bar.has_method("hide_boss_bar"):
 		boss_hp_bar.hide_boss_bar()
 
 	spawn_eclipse_shard()
+	
+	var hud := get_tree().get_first_node_in_group("hud")
+
+	if hud != null and hud.has_method("show_message"):
+		hud.show_message("BRAKKOR DEFEATED
+The Eclipse Shard has appeared.")
 
 	queue_free()
 
